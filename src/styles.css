@@ -1,63 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
 /** Box Model All HTML elements**/
-html{
+html {
   box-sizing: border-box;
   font-size: 62.5%; /* 1rem = 10px */
   padding: 1rem;
   scroll-behavior: smooth;
 }
-*,*:before,*:after{
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
-body{
-  font-family: 'Raleway', sans-serif;
+body {
+  font-family: "Raleway", sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
 }
 
 /** Globales **/
-h1,h2,h3,h4{
+h1,
+h2,
+h3,
+h4 {
   /* font-family: 'Playfair Display', serif; */
   margin: 0 0 3rem 0;
   font-weight: 700;
 }
-h1{
+h1 {
   font-size: 4rem;
 }
-h2{
+h2 {
   font-size: 3rem;
 }
-h3{
+h3 {
   font-size: 2rem;
 }
-h4{
+h4 {
   font-size: 1.75rem;
 }
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-.container{
+.container {
   max-width: 130rem;
   margin: 0 auto;
 }
 
-img{
- max-width: 100%;
- display: block;
+img {
+  max-width: 100%;
+  display: block;
 }
 
+pre {
+  margin: 1rem 0;
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 1rem;
+}
 /* Utilidades */
-.text-center{
+.text-center {
   text-align: center;
 }
-.max-width-30{
+.max-width-30 {
   max-width: 30rem;
 }
 
-.img-full-cover{
+.img-full-cover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 30% 70%;
@@ -65,53 +77,52 @@ img{
 
 /*Footer Nav*/
 
-.site-footer{
+.site-footer {
   border-top: 1px solid #e1e1e1;
   padding-top: 3.5rem;
 }
 
-.site-footer h3{
+.site-footer h3 {
   margin-bottom: 0.5rem;
 }
 
-.grid-footer{
+.grid-footer {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  grid-template-columns: repeat(auto-fit,minmax(25rem,2fr));
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 2fr));
   gap: 2rem;
 }
 
-.nav-foot a{
+.nav-foot a {
   display: block;
   text-decoration: none;
 }
 
-.copyright{
+.copyright {
   text-align: center;
-  margin-top: 5rem;;
+  margin-top: 5rem;
 }
 
-.modal-title{
+.modal-title {
   width: 100%;
 }
-.modal-body{
+.modal-body {
   margin: 2rem;
 }
 
-.bi{
+.bi {
   font-size: 1.5rem;
 }
 
-.dropdown-item{
-  color: #6c757d;;
+.dropdown-item {
+  color: #6c757d;
 }
 
-.diapos{
+.diapos {
   height: 50rem;
   max-width: 100rem;
   margin: 0 auto;
 }
-
 
 /* .header-m{
   position: fixed;
