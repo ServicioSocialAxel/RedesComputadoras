@@ -4,22 +4,13 @@
     "titulo": "Fundamentos de redes",
     "imagen": "https://i.go-travels.com/img/how-to/networking-fundamentals.jpg",
     "competencia": "Analiza los fundamentos de redes de computadoras con base en su clasificación, organizaciones de estandarización, el modelo OSI, la arquitectura TCP/IP.",
-    "keywords": [
-      "Redes",
-      "Clasificación",
-      "Estandares",
-      "OSI",
-      "TCP/IP"
-    ],
+    "keywords": ["Redes", "Clasificación", "Estandares", "OSI", "TCP/IP"],
     "contenido": [
       {
         "seccion": 1.1,
         "titulo": "Fundamentos de redes de computadoras",
         "descripcionRecurso": "",
-        "keywords": [
-          "Redes",
-          "Fundamentos"
-        ],
+        "keywords": ["Redes", "Fundamentos"],
         "unidad": "<h3 class='text-center'>Sección sin información</h3>",
         "recurso": "",
         "actividad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='https://www.dspace.espol.edu.ec/bitstream/123456789/27398/1/20132SPRTCO011561_1.PDF' type='application/pdf'></object></div>"
@@ -28,11 +19,7 @@
         "seccion": 1.2,
         "titulo": "Clasificación de redes de computadoras",
         "descripcionRecurso": "",
-        "keywords": [
-          "Clasificacion",
-          "Geográfica",
-          "Tendencias"
-        ],
+        "keywords": ["Clasificacion", "Geográfica", "Tendencias"],
         "unidad": "<h3 class='text-center'>Sección sin información</h3>",
         "recurso": "",
         "actividad": "<h3 class='text-center'>Sin actividades disponibles</h3>"
@@ -41,10 +28,7 @@
         "seccion": 1.3,
         "titulo": "Organizaciones de estandarización",
         "descripcionRecurso": "",
-        "keywords": [
-          "Estandares",
-          "IEEE"
-        ],
+        "keywords": ["Estandares", "IEEE"],
         "unidad": "Test",
         "recurso": "",
         "actividad": "<h3 class='text-center'>Sin actividades disponibles</h3>"
@@ -53,10 +37,7 @@
         "seccion": 1.4,
         "titulo": "Modelo OSI y Arquitectura TCP/IP",
         "descripcionRecurso": "",
-        "keywords": [
-          "OSI",
-          "TCP/IP"
-        ],
+        "keywords": ["OSI", "TCP/IP"],
         "unidad": "<h3 class='text-center'>Sección sin información</h3>",
         "recurso": "",
         "actividad": "<h3 class='text-center'>Sin actividades disponibles</h3>"
@@ -81,10 +62,7 @@
         "seccion": 2.1,
         "titulo": "Funciones de los protocolos",
         "descripcionRecurso": "",
-        "keywords": [
-          "Redes",
-          "Fundamentos"
-        ],
+        "keywords": ["Redes", "Fundamentos"],
         "unidad": "",
         "recurso": ""
       },
@@ -92,10 +70,7 @@
         "seccion": 2.2,
         "titulo": "Especificaciones y estándares de medios de transmisión",
         "descripcionRecurso": "",
-        "keywords": [
-          "Medios",
-          "Transmisión"
-        ],
+        "keywords": ["Medios", "Transmisión"],
         "unidad": "",
         "recurso": ""
       },
@@ -103,9 +78,7 @@
         "seccion": 2.3,
         "titulo": "Códigos de línea",
         "descripcionRecurso": "",
-        "keywords": [
-          "Código"
-        ],
+        "keywords": ["Código"],
         "unidad": "",
         "recurso": ""
       }
@@ -116,35 +89,22 @@
     "titulo": "Capa de Acceso a la Red",
     "imagen": "https://www.legalik.com/i/wi/abogados-acceso-a-red-no-autorizada-espionaje-y-robo-de-informacion.1280x960.1493543501.jpeg",
     "competencia": "Examina la capa de acceso a la red a partir de rutinas para manipular la NIC, estándares aplicables y tecnologías de control de acceso al medio.",
-    "keywords": [
-      "Capa Física",
-      "NIC",
-      "Rutinas",
-      "IEE 802.3",
-      "Accesos"
-    ],
+    "keywords": ["Capa Física", "NIC", "Rutinas", "IEE 802.3", "Accesos"],
     "cuadroEval": "assets/img/bibliografia.png",
     "contenido": [
       {
         "seccion": 3.1,
         "titulo": "Fundamentos de capa física",
         "descripcionRecurso": "",
-        "keywords": [
-          "Ancho de banda",
-          "Ruido"
-        ],
-        "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='http://148.204.58.221/axel/redesnp/2020/2a_parte_Redes%20de%20computadoras.pdf#page=2' type='application/pdf'></object></div>",
+        "keywords": ["Ancho de banda", "Ruido"],
+        "unidad": "<section id='contenido-31'> <section id='contenido-31__311'> <p></p> <h4>3.1.1 Ancho de banda</h4> <strong>Ancho de banda analógico</strong>: Consiste en el rango de frecuencias alrededor de la frecuencia fundamental y donde se concentra la mayor cantidad de energía de la señal. Se mide en hercios (Hz). En este rango de frecuencias positivas la respuesta del sistema es relativamente plana, por lo que las señales pueden ser transmitidas sin distorsión. <p /> <figure style='text-align: center'> <img src='assets/img/3_1_Contenido.png' alt='' style='width: 75rem; margin: 2rem auto' /> <figcaption> Stallings W. (2004). Transmisi&oacute;n de datos. En comunicaci&oacute;n y redes de computadoras. (pp. 95). USA: Pearson Education </figcaption> </figure> <br /> <p> <strong>Ancho de banda digital</strong>: Normalmente asociado con la Capacidad de canal (C), se define como la máxima cantidad de información (bits) que puede ser enviada por unidad de tiempo sobre un canal de comunicación. Se mide en bits por segundo (bps). </p> </section> <br /> <section id='contenido-31__312'> <h4>3.1.2 Ruido y relación señal-ruido</h4> <p> <strong>Ruido</strong>: Son señales no deseadas que se añaden a la señal de datos durante la transmisión a través del medio de comunicación. De acuerdo con (Stallings, 2004), el ruido puede clasificarse en: </p> <ul> <li> <p> <strong>Ruido térmico</strong> (ruido blanco): está presente en todos los dispositivos electrónicos y medios de transmisión, no se puede eliminar y supone un límite superior en las prestaciones de los dispositivos de comunicación. Se debe a la agitación térmica producida por los electrones. </p> <br /> <p style='text-align: center'> <img style='margin: 0 auto' src='assets/img/contenido-31-312-eq1.png' alt='' /> </p> </li> <br /> <li> <strong>Ruido de intermodulación</strong>: Se produce cuando dos o más señales a diferentes frecuencias usan el mismo medio de transmisión y éstas se suman produciendo señales a múltiplos de las frecuencias originales. Debido a un mal funcionamiento del transmisor, receptor, o el medio. </li> <br /> <li> <strong>Diafonía</strong>: Se debe al acoplamiento de dos señales de transmisión haciendo que se mezclen ambas señales. Es menos frecuente en transmisiones por aire que por cable. </li> <br /> <li> <strong>Ruido impulsivo</strong>: Éste se debe a diversos motivos (tormentas atmosféricas que causan perturbaciones electromagnéticas, medios de transmisión en mal estado, etc.). </li> </ul> <br /> <p> <strong>Relación Señal/Ruido (S/N)</strong>: Expresa la cantidad en que una señal de información excede el nivel de ruido presente en el medio de comunicación. </p> <br /> <p style='text-align: center'> <img style='margin: 0 auto' src='assets/img/contenido-31-312-eq2.png' alt='' /> </p> </section> <br /> <section id='contenido-31__313'> <p> <strong>3.1.3 Capacidad de Canal (C)</strong>: Esta medida fija el límite teórico al cual los datos pueden ser transmitidos por el canal de comunicación. Está definida como la máxima velocidad a la que los datos pueden ser transmitidos con buena fidelidad (baja tasa de errores) sobre un canal de comunicación. Se mide en bits por segundo (bps). Existen dos criterios importantes para medir la capacidad de canal, el de Nyquist (caso ideal) y el de Shannon: </p> <ul> <li> <p>Capacidad de canal de acuerdo con Nyquist:</p> <br /> <p style='text-align: center'> <img style='margin: 0 auto' src='assets/img/contenido-31-313-eq1.png' alt='' /> </p> </li> <br /> <li> <p>Capacidad de canal de acuerdo con Shannon:</p> <br /> <p style='text-align: center'> <img style='margin: 0 auto' src='assets/img/contenido-31-313-eq2.png' alt='' /> </p> </li> </ul> </section> </section>",
         "recurso": ""
       },
       {
         "seccion": 3.2,
         "titulo": "Rutinas para manipular la NIC",
         "descripcionRecurso": "Lista de códigos para la NIC tanto en C, como en Java",
-        "keywords": [
-          "Tramas de vuelo",
-          "Enviar Tramas",
-          "Rutinas"
-        ],
+        "keywords": ["Tramas de vuelo", "Enviar Tramas", "Rutinas"],
         "unidad": "<h4>Acceso Acceso al controlador de la tarjeta de red en C</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/NIC_Npcap.pdf' type='application/pdf'></object></div><h4 class='pt-5'>Acceso Acceso al controlador de la tarjeta de red en JAVA</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/NIC_Pcap4J.pdf' type='application/pdf'></object></div>",
         "recurso": "<h4>Acceso Acceso al controlador de la tarjeta de red en C</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='http://148.204.58.221/axel/redesnp/sniffer/NPCAP/' type='text/html'></object></div><h4 class='pt-5'>Acceso Acceso al controlador de la tarjeta de red en JAVA</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/' type='text/html'></object></div>"
       },
@@ -152,11 +112,7 @@
         "seccion": 3.3,
         "titulo": "Estándar IEEE 802.3",
         "descripcionRecurso": "",
-        "keywords": [
-          "HDLC",
-          "Encabezados",
-          "Análisis de Trama"
-        ],
+        "keywords": ["HDLC", "Encabezados", "Análisis de Trama"],
         "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/HDLC_LLC.pdf' type='application/pdf'></object></div>",
         "recurso": ""
       },
@@ -164,9 +120,7 @@
         "seccion": 3.4,
         "titulo": "Tecnologías de Control de Acceso al Medio",
         "descripcionRecurso": "",
-        "keywords": [
-          "Accesos, Medios compartidos, CSMA"
-        ],
+        "keywords": ["Accesos, Medios compartidos, CSMA"],
         "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio.pdf' type='application/pdf'></object></div>",
         "recurso": ""
       }
@@ -177,24 +131,13 @@
     "titulo": "Capa de Internet",
     "imagen": "https://ruizhealytimes.com/wp-content/uploads/2020/12/Internet-velocidad-Foto-Archivo.jpg",
     "competencia": "Administra problemas entre redes IP con base en el direccionamiento IPv4 y los protocolos ARP, IP, ICMP, IGMP y de enrutamiento.  ",
-    "keywords": [
-      "Internet IP",
-      "Enrutamiento IP",
-      "ARP",
-      "ICMP",
-      "IGMP"
-    ],
+    "keywords": ["Internet IP", "Enrutamiento IP", "ARP", "ICMP", "IGMP"],
     "contenido": [
       {
         "seccion": 4.1,
         "titulo": "Protocolo de Internet IP",
         "descripcionRecurso": "",
-        "keywords": [
-          "IPv4",
-          "IPv6",
-          "Encabezados",
-          "Tramas"
-        ],
+        "keywords": ["IPv4", "IPv6", "Encabezados", "Tramas"],
         "unidad": "",
         "recurso": ""
       },
@@ -202,10 +145,7 @@
         "seccion": 4.2,
         "titulo": "Enrutamiento IP",
         "descripcionRecurso": "",
-        "keywords": [
-          "Enrutamiento Estático",
-          "Enrutamiento Dinámico"
-        ],
+        "keywords": ["Enrutamiento Estático", "Enrutamiento Dinámico"],
         "unidad": "",
         "recurso": ""
       },
@@ -213,10 +153,7 @@
         "seccion": 4.3,
         "titulo": "Protocolo de Resolución de Direcciones ARP",
         "descripcionRecurso": "",
-        "keywords": [
-          "ARP",
-          "Tramas"
-        ],
+        "keywords": ["ARP", "Tramas"],
         "unidad": "",
         "recurso": ""
       },
@@ -224,10 +161,7 @@
         "seccion": 4.4,
         "titulo": "Protocolo de Mensajes de Control de Internet ICMP ",
         "descripcionRecurso": "",
-        "keywords": [
-          "ICMP",
-          "Tramas"
-        ],
+        "keywords": ["ICMP", "Tramas"],
         "unidad": "",
         "recurso": ""
       },
@@ -235,12 +169,7 @@
         "seccion": 4.5,
         "titulo": "Protocolo de Administración de Grupos de Internet (IGMP)",
         "descripcionRecurso": "",
-        "keywords": [
-          "IGMP",
-          "DVMRP",
-          "PIM",
-          "MSDP"
-        ],
+        "keywords": ["IGMP", "DVMRP", "PIM", "MSDP"],
         "unidad": "",
         "recurso": ""
       }
@@ -251,18 +180,13 @@
     "titulo": "Capa de Transporte",
     "imagen": "https://jaidoman.files.wordpress.com/2015/02/iot.png",
     "competencia": "Analiza los servicios de la capa de Transporte a partir de los protocolos TCP Y UDP para una comunicación confiable extremo a extremo.",
-    "keywords": [
-      "TCP",
-      "UDP"
-    ],
+    "keywords": ["TCP", "UDP"],
     "contenido": [
       {
         "seccion": 5.1,
         "titulo": "Protocolo de Control de Transmisión TCP",
         "descripcionRecurso": "",
-        "keywords": [
-          "Encabezados TCP"
-        ],
+        "keywords": ["Encabezados TCP"],
         "unidad": "",
         "recurso": ""
       },
@@ -270,9 +194,7 @@
         "seccion": 5.2,
         "titulo": "Protocolo de Datagramas de Usuario UDP ",
         "descripcionRecurso": "",
-        "keywords": [
-          "Encabezados UDP"
-        ],
+        "keywords": ["Encabezados UDP"],
         "unidad": "",
         "recurso": ""
       },
@@ -280,10 +202,7 @@
         "seccion": 5.3,
         "titulo": "Análisis de segmentos TCP y datagramas UDP",
         "descripcionRecurso": "",
-        "keywords": [
-          "Segmentos",
-          "Datagramas"
-        ],
+        "keywords": ["Segmentos", "Datagramas"],
         "unidad": "",
         "recurso": ""
       }
