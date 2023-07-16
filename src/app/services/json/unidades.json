@@ -114,7 +114,7 @@
         "descripcionRecurso": "",
         "keywords": ["HDLC", "Encabezados", "Análisis de Trama"],
         "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/HDLC_LLC.pdf' type='application/pdf'></object></div>",
-        "recurso": ""
+        "recurso": "<h4>Est&aacute;ndar IEEE 802.3</h4><div class='embed-responsive embed-responsive-16by9 diapos'> <object data='assets/data/3_3_EstandarIEEE802.pdf' type='application/pdf' ></object> </div><br /><br />"
       },
       {
         "seccion": 3.4,
