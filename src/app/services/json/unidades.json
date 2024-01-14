@@ -167,7 +167,7 @@
         "keywords": [
           "Accesos, Medios compartidos, CSMA"
         ],
-        "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio.pdf' type='application/pdf'></object></div>",
+        "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio.pdf' type='application/pdf'></object></div><br/><br/><h4>Protocolos de acceso al medio</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ProtocolosAccesoAlMedio.pdf' type='application/pdf'></object></div>",
         "recurso": ""
       }
     ]
