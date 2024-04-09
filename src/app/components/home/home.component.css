@@ -118,13 +118,13 @@
   grid-template-columns: 1fr 1fr;
 }
 .img-meto{
-  background-image: url(../../../assets/img/meto.png);
+  background-image: url(../../../assets/img/meto.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 .img-estra{
-  background-image: url(https://tutorial.cch.unam.mx/img/homearriba-prov.png);
+  background-image: url(../../../assets/img/estrategia.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -172,6 +172,11 @@
 
 .qr-container {
   max-width: 15%;
+  height: auto;
+}
+
+.img-responsive {
+  max-width: 50%;
   height: auto;
 }
 
