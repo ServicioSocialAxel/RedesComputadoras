@@ -51,11 +51,30 @@
   color: white;
 }
 
-.about-us-img{
+.about-us-img {
+  position: relative;
   background-image: url(../../../assets/img/redes1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+.image-source {
+  position: absolute; /* Posiciona el texto de forma absoluta en relación con el contenedor padre */
+  bottom: 5px; /* Coloca el texto 5px desde el borde inferior del contenedor */
+  left: 5px; /* Coloca el texto 5px desde el borde derecho del contenedor */
+  font-size: 0.8em; /* Tamaño del texto */
+  color: #fff; /* Color del texto */
+}
+
+.competence-img {
+  position: relative;
+  width: 50%; /* Ajustamos el ancho al 100% del contenedor */
+  padding-bottom: 30%; /* Proporción de aspecto deseada (ajustar según sea necesario) */
+  background-image: url(../../../assets/img/competencia.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /* Centra horizontalmente y verticalmente */
 }
 
 .aux-div{
@@ -81,6 +100,16 @@
   grid-template-columns: repeat(auto-fit,minmax(25rem,1fr)); */
 }
 
+.competencia-text {
+  width: 100%;
+  text-align: center;
+}
+
+.competencia-text div {
+  display: inline-block;
+  margin: 0 auto;
+}
+
 .competencia-text p{
   display: block;
   text-align: center;
@@ -91,13 +120,12 @@
   border-radius: 0 0 1rem 1rem;
 }
 
-.eval{
-  background-image: linear-gradient(to right, transparent 50%,#037bc0 50%,#037bc0 100%), url(../../../assets/img/eval.jpg);
-  padding: 8rem 0;
+.eval-img {
+  position: relative;
+  background-image: url(../../../assets/img/eval.jpg);
   background-repeat: no-repeat;
-  background-size: 100%, 120rem;
-  background-position: left center;
-  margin-top: 3rem;
+  background-size: cover;
+  background-position: center center;
 }
 
 .grid-reque{
@@ -107,6 +135,7 @@
 }
 
 .img-reque{
+  position: relative;
   background-image: url(../../../assets/img/requerimientos.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -118,12 +147,14 @@
   grid-template-columns: 1fr 1fr;
 }
 .img-meto{
+  position: relative;
   background-image: url(../../../assets/img/meto.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 .img-estra{
+  position: relative;
   background-image: url(../../../assets/img/estrategia.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -191,5 +222,8 @@
   }
 }
 
-
-
+@media screen and (max-width: 768px) {
+  .image-source {
+    font-size: 0.6em;
+  }
+}
