@@ -1,28 +1,23 @@
-<header class="nav-main-header fixed-top">
-  <div class="header-main">
-
-    <!-- <div class="navs-header">
-      <a *ngFor="let item of navs" [href]="item.link">{{item.title}}</a>
-    </div> -->
+<header class="nav-main-header sticky-header" [ngClass]="{'sticky': isSticky}">
+  <div class="logos" [routerLink]="['/']" (click)="collapse()">
+    <img class="img-logo" src="assets/img/ipn.png" alt="escom">
+    <h2 class="redes-text">Redes de <p><span>Computadoras</span></p></h2>
+    <h2 class="escom-text">Escuela Superior de <p><span>Cómputo</span></p></h2>
+    <img class="img-logo right right-column" src="assets/img/escom.png" alt="escom">
+  </div>
+  <div class="nav-position">
     <nav class="navbar navbar-expand-lg navbar-light navs-header">
-      <div class="logos" [routerLink]="['/']" (click)="collapse()">
-        <img class="img-logo" src="assets/img/ipn.png" alt="escom">
-        <h2 class="redes-text">Redes de <p><span>Computadoras</span></p></h2>
-        <img class="img-logo" src="assets/img/escom.png" alt="escom">
-      </div>
-
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" (click)="collapse()" *ngIf="currentLink != '/'">
-            <a class="nav-link" [routerLink]="['/']">Encuadre</a>
+            <a class="nav-link" [routerLink]="['/']">Inicio</a>
           </li>
           <li class="nav-item dropdown" *ngIf="currentLink == '/'">
             <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Encuadre
+              Inicio
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" [routerLink]="['/']" (click)="collapse()">
               <a class="dropdown-item" *ngFor="let item of navs" (click)="goToId(item.link)">{{item.title}}</a>
@@ -63,9 +58,6 @@
             </div>
           </li>
         </ul>
-        <ul class="navbar-nav">
-        </ul>
-        
       </div>
     </nav>
   </div>

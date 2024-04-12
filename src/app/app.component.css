@@ -1,5 +1,5 @@
 .app{
-  margin-top: 15rem;
+  margin-top: 0rem;
 }
 
 .dropdown-item{
@@ -11,6 +11,13 @@
   width: 40%;
   justify-content: space-between;
   margin-left: 5rem;
+}
+
+.nav-position {
+  width: 100%; /* El div ocupa el 100% del ancho de la pantalla */
+  /*float: center; */
+  display: flex; /* Usa flexbox para centrar el contenido */
+  justify-content: center; /* Centra el contenido horizontalmente */
 }
 
 .dropdown-menu {
@@ -29,14 +36,31 @@
 }
 
 .img-logo{
-  width: 6rem;
-  max-width: 6rem;
+  width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
+  max-width: 12rem; /* La imagen no superará los 12 rems de ancho */
+  height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+  min-width: 6rem; /* Tamaño mínimo para la imagen */
 }
 
-.logos{
+.logos {
   display: grid;
-  cursor: pointer;
-  grid-template-columns: repeat(3,3fr);
+  grid-template-columns: auto auto 1fr auto; /* Dos columnas automáticas a la izquierda, seguidas de dos columnas que ocupan el espacio restante */
+  align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* Ajusta la alineación de los elementos si es necesario */
+.logos > *:nth-child(-n+2) {
+  justify-self: start; /* Alinea los primeros dos elementos a la izquierda */
+}
+
+.logos > *:nth-child(n+3) {
+  justify-self: end; /* Alinea los últimos dos elementos a la derecha */
+}
+
+
+.right-column {
+  grid-column-start: 4; /* Inicia en la tercera columna */
+  grid-column-end: -1; /* Termina en la última columna de la cuadrícula */
 }
 
 .redes-text{
@@ -45,6 +69,15 @@
 }
 
 .redes-text span{
+  color: #037bc0;
+}
+
+.escom-text{
+  margin: 0 3rem;
+  font-size: 2rem;
+}
+
+.escom-text span{
   color: #037bc0;
 }
 
@@ -58,9 +91,9 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap; */
-  padding-top: 2.5rem;
+  padding-top: 0rem;
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 1fr;
 }
 
 .navs-header a{
@@ -72,6 +105,21 @@
   margin: 0 auto;
   padding: 0.5rem 4rem;
 }
+
+/* app.component.css */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff; /* Change to your desired background color */
+  z-index: 1000; /* Adjust z-index as needed */
+  transition: top 0.3s; /* Add smooth transition when header becomes sticky */
+}
+
+.sticky {
+  top: -21rem; /* Adjust to the height of your header */
+}
+
 
 @media only screen and (max-width: 800px) {
   .navs-header{
