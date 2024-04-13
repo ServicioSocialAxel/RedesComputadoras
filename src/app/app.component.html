@@ -15,48 +15,45 @@
           <li class="nav-item" (click)="collapse()" *ngIf="currentLink != '/'">
             <a class="nav-link" [routerLink]="['/']">Inicio</a>
           </li>
+
           <li class="nav-item dropdown" *ngIf="currentLink == '/'">
-            <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Inicio
-            </a>
+            <a class="nav-link dropdown-toggle font-weight-bold h3" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inicio</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" [routerLink]="['/']" (click)="collapse()">
-              <a class="dropdown-item" *ngFor="let item of navs" (click)="goToId(item.link)">{{item.title}}</a>
+              <a class="dropdown-item font-weight-bold h5" *ngFor="let item of navs"
+                (click)="goToId(item.link)">{{item.title}}</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Unidades
+            <a class="nav-link dropdown-toggle font-weight-bold h3" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Unidades</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapse()">
+              <a class="dropdown-item font-weight-bold h5 text-truncate" style="max-width: 90vw;"
+                *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.-
+                {{item.titulo}}</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle font-weight-bold h3" href="#" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              &nbsp; Más información
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapse()">
-              <a class="dropdown-item" *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+              <a class="dropdown-item font-weight-bold h5" data-toggle="modal" [attr.data-target]="'#biblio'"><i
+                  class="bi bi-card-text"></i>&nbsp; Fuentes de consulta</a>
+              <a class="dropdown-item font-weight-bold h5" data-toggle="modal" [attr.data-target]="'#glosario'"><i
+                  class="bi bi-journal-text"></i>&nbsp; Glosario</a>
             </div>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Recursos
+            <a class="nav-link dropdown-toggle font-weight-bold h3" href="#" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"><i class="bi bi-globe"></i>&nbsp;Idioma
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapse()">
-              <a class="dropdown-item" *ngFor="let item of unidades" [routerLink]="['recursos',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+              <button role="a" value="es" class="dropdown-item font-weight-bolder h5 text-dark">Español</button>
+              <button role="a" value="eng" class="dropdown-item font-weight-bold h5 disabled" disabled>English</button>
             </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Autoevaluación
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapse()">
-              <a class="dropdown-item" *ngFor="let item of unidades" [routerLink]="['evaluaciones',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="User" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="bi bi-info-circle"></i>
-            </a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" data-toggle="modal" [attr.data-target]="'#biblio'"><i class="bi bi-card-text"></i> &nbsp; Bibliografía</a>
-              <a class="dropdown-item" data-toggle="modal" [attr.data-target]="'#program'"><i class="bi bi-list-check"></i> &nbsp; Programa de la unidad</a>
-              <a class="dropdown-item" data-toggle="modal" [attr.data-target]="'#glosario'"><i class="bi bi-journal-text"></i> &nbsp; Glosario</a>
-            </div>
-          </li>
+          </li>          
         </ul>
       </div>
     </nav>
