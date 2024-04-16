@@ -115,6 +115,7 @@
     "indice": 3,
     "titulo": "Capa de Acceso a la Red",
     "imagen": "assets/img/network.png",
+    "img_src": "https://gencraft.com/prompt/adbfd10d-253e-49b9-9810-cedca7d08694?creation_id=b49e4e4a-ce9d-4e03-9b46-8373b02142fb",
     "competencia": "Examina la capa de acceso a la red a partir de rutinas para manipular la NIC, estándares aplicables y tecnologías de control de acceso al medio.",
     "keywords": [
       "Capa Física",
