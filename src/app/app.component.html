@@ -43,6 +43,8 @@
                   class="bi bi-card-text"></i>&nbsp; Fuentes de consulta</a>
               <a class="dropdown-item font-weight-bold h5" data-toggle="modal" [attr.data-target]="'#glosario'"><i
                   class="bi bi-journal-text"></i>&nbsp; Glosario</a>
+              <a class="dropdown-item font-weight-bold h5" data-toggle="modal" [attr.data-target]="'#usermanual'"><i
+                  class="bi bi-question-circle"></i>&nbsp; Manual de usuario</a>
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -96,6 +98,27 @@
 <div class="app">
   <router-outlet></router-outlet>
 </div>
+
+<section class="modal fade" id="usermanual">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h2 class="modal-title w-100">Manual de Usuario</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class='embed-responsive' style="min-height: 70vh; max-height: 80vh;">
+            <iframe title="Manual de usuario" class="embed-responsive-item" loading='lazy'
+              src='assets/data/RDD_RC_usr_man.pdf'></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <app-glosario></app-glosario>
 
