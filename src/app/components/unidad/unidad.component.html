@@ -66,6 +66,9 @@
     <div [innerHTML]="unidad.coevaluacion | sanitizedHtml"></div>
   </div>
   <div *ngIf="tipo == 0 && selection == 'presentacion'">
+    <h4 class="font-weight-bold w-100 mt-4 mb-0" *ngIf="unidad.activities">
+      De click en el título de la presentación para visualizar su contenido.
+    </h4>
     <div class="card">
       <div [class]="'data-complete'">
         <div>
@@ -77,7 +80,7 @@
             <span>{{unidad.recurso[unidad.recurso.length - 1].descripcionRecurso}}</span>
           </div>
           <div [id]="'seccion' + 0" class="collapsing">
-            <div [innerHTML]="unidad.recurso[unidad.recurso.length - 1].recurso | sanitizedHtml" class="container">
+            <div [innerHTML]="unidad.recurso[unidad.recurso.length - 1].recurso | sanitizedHtml" class="embed-responsive embed-responsive-16by9">
             </div>
           </div>
         </div>
