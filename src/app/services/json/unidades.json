@@ -174,6 +174,15 @@
         "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio.pdf' type='application/pdf'></object></div><br/><br/><h4>Protocolos de acceso al medio</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ProtocolosAccesoAlMedio.pdf' type='application/pdf'></object></div>",
         "recurso": ""
       }
+    ],
+    "recurso": [
+      {
+        "seccion": 2.0,
+        "titulo": "Gestión estratégica de la empresa",
+        "descripcionRecurso": "Presentación de genial.ly sobre la Gestión Estratégica de las empresas.",
+        "category": "reading",
+        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='https://view.genial.ly/6154a6c25d28670d7f01b83e' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+      }
     ]
   },
   {
