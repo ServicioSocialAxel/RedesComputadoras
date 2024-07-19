@@ -2,7 +2,7 @@
   <article *ngIf="tipo == 1 || (tipo == 0 && selection == 'contenidos')">
     <div *ngIf="tipo == 1">
       <h4 class="font-weight-bold w-100 mt-4">
-        Aquí encontrarás videos, lecturas, podcasts, entre otros elementos auxiliares a la unidad
+        Aquí encontrarás videos auxiliares a la unidad <br>
         {{unidad.indice}}.
         {{unidad.titulo}}. De click en el título de cada sección para visualizar el contenido.
       </h4>
@@ -15,10 +15,7 @@
           [classList]="rsrcsCategory === 'reading' ? 'btn btn-outline-info label-no-margin active':'btn btn-outline-info label-no-margin'"><input
             type="radio" class="btn-check" name="rsrcsCategory" id="reading" autocomplete="off" [value]="'reading'"
             [(ngModel)]="rsrcsCategory" />Lecturas</label>
-        <label
-          [classList]="rsrcsCategory === 'podcast' ? 'btn btn-outline-info label-no-margin active':'btn btn-outline-info label-no-margin'"><input
-            type="radio" class="btn-check" name="rsrcsCategory" id="podcast" autocomplete="off" [value]="'podcast'"
-            [(ngModel)]="rsrcsCategory" />Podcasts</label>
+        
       </div>
     </div>
     <h4 *ngIf="tipo == 0" class="font-weight-bold w-100 mt-4 mb-0">
@@ -96,22 +93,28 @@
     <div [innerHTML]="unidad.coevaluacion | sanitizedHtml"></div>
   </article>
   <article *ngIf="tipo == 0 && selection == 'presentacion'">
-    <h4 class="font-weight-bold w-100 mt-4 mb-0" *ngIf="unidad.activities">
+    <h4 class="font-weight-bold w-100 mt-4 mb-0" *ngIf="unidad.presentaciones">
       De click en el título de la presentación para visualizar su contenido.
     </h4>
-    <div class="card">
-      <div [class]="'data-complete'">
+    <h4 class="text-center mt-4" *ngIf=" !unidad.presentaciones">
+      Sección sin información.
+    </h4>
+    <div class="card" *ngFor="let presentation of unidad.presentaciones;let idx = index">
+      <div class="justify-content-center">
         <div>
-          <div class="card-header" data-toggle="collapse" [attr.data-target]="'#seccion' + 0" aria-expanded="true"
-            [attr.aria-controls]="'seccion' + 0">
-            <h3>
-              {{unidad.recurso[unidad.recurso.length - 1].titulo}}
+          <div class="card-header" data-toggle="collapse" [attr.data-target]="'#seccion' + idx" aria-expanded="true"
+              [attr.aria-controls]="'seccion' + idx">
+            <h3 class="card-title">
+                {{presentation.seccion}} {{presentation.titulo}}
             </h3>
-            <span>{{unidad.recurso[unidad.recurso.length - 1].descripcionRecurso}}</span>
-          </div>
-          <div [id]="'seccion' + 0" class="collapsing">
-            <div [innerHTML]="unidad.recurso[unidad.recurso.length - 1].recurso | sanitizedHtml"
-              class="embed-responsive embed-responsive-16by9">
+            <div>
+              <span>{{presentation.descripcionRecurso}}</span>
+            </div>
+            <div [id]="'seccion' + idx" class="collapsing">
+              <div *ngIf="presentation.recurso" [innerHTML]="presentation.recurso | sanitizedHtml"
+                class="card-body justify-content-center embed-responsive embed-responsive-1by1"></div>
+              <div *ngIf="presentation.descripcionRecurso" [innerHTML]="presentation.descripcionRecurso | sanitizedHtml"
+                class="card-body justify-content-center"></div>
             </div>
           </div>
         </div>

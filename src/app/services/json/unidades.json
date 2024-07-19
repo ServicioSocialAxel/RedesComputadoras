@@ -82,67 +82,11 @@
     ],
     "recurso": [
       {
-        "seccion": 2.0,
-        "titulo": "Proceso Administrativo",
-        "descripcionRecurso": "¿Quieres saber más?",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' scrolling='no' style='border:0px' src='https://books.google.com.gt/books?id=b8_hBAAAQBAJ&lpg=PR4&hl=es&pg=PP1&output=embed'></iframe>"
-      },
-      {
-        "seccion": 2.0,
-        "titulo": "La Pinche Complejidad con Nicolás Alvarado",
-        "descripcionRecurso": "La complejidad de la comida y su gentrificación en la CDMX, discutamos el tema",
-        "category": "podcast",
-        "recurso": "<iframe src='https://open.spotify.com/embed/episode/0r1r2m4WzERzASnUADDFZs?utm_source=generator' class='embed-responsive-item' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>"
-      },
-      {
-        "seccion": 2.0,
-        "titulo": "Los Pericos - Todos lo Hacen",
-        "descripcionRecurso": "Reflexionemos sobre valores.",
+        "seccion": 1.0,
+        "titulo": "Sección sin información",
+        "descripcionRecurso": "Add description",
         "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube-nocookie.com/embed/RV47ycSh5vU?si=VNaRR-T5Nqno8gM8' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.1,
-        "titulo": "¿Cómo Hacer una Visión?",
-        "descripcionRecurso": "Miremos al futuro.",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/Lk6OfqndH1k' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.2,
-        "titulo": "¿Cómo Hacer una Misión?",
-        "descripcionRecurso": "Miremos el hoy.",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/d-IqjXIgyJg' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.3,
-        "titulo": "Cómo Determino los Valores Empresariales para mi Negocio?",
-        "descripcionRecurso": "¿Qué es un valor?",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/h5qoUg2jACw' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": "2.4",
-        "titulo": "Balanced Scorecard",
-        "descripcionRecurso": "Cuadro de Mando Integral.",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://express.adobe.com/video/9tEznS736I36p/embed' frameborder='0' allowfullscreen=''></iframe></div>"
-      },
-      {
-        "seccion": 2.6,
-        "titulo": "Qué es y Cómo se Hace un Análisis FODA?",
-        "descripcionRecurso": "¿Fortaleza o debilidad?",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/_6vz0-Hx9cE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.7,
-        "titulo": "Gestión estratégica de la empresa",
-        "descripcionRecurso": "Presentación de genial.ly sobre la Gestión Estratégica de las empresas.",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='https://view.genial.ly/6154a6c25d28670d7f01b83e' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+        "recurso": "<h3 class='text-center'>Sección sin información</h3>"
       }
     ]
   },
@@ -160,29 +104,14 @@
       "Segmentación"
     ],
     "evaluacion": "<iframe loading='lazy' src='assets/data/Evaluacion_2.pdf' style='width: 100%; height: 70rem;'></iframe>",
-    "autoevaluacion": "<iframe loading='lazy' frameborder='0'  style='width: 100%; height: 50rem;' src='https://view.genial.ly/625af435f8dc320011f3709d' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
-    "coevaluacion": "<iframe loading='lazy' frameborder='0' style='width: 100%; height: 50rem;' src='https://my.forms.app/form/6287930d95113a44f6a79b6b' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
+    "autoevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
+    "coevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
     "cuadroEval": "assets/img/bibliografia.png",
     "activities": [
       {
         "section": 2.1,
-        "title": "Test 1",
-        "embed": "<iframe loading='lazy' src='assets/data/Actividad_2_1.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
-      },
-      {
-        "section": 2.2,
-        "title": "Test 2",
-        "embed": "<iframe loading='lazy' src='assets/data/Actividad_2_2.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
-      },
-      {
-        "section": 2.3,
-        "title": "Test 3",
-        "embed": "<iframe loading='lazy' src='assets/data/Actividad_2_3_4.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
-      },
-      {
-        "section": 2.5,
-        "title": "Test 4",
-        "embed": "<iframe loading='lazy' src='assets/data/Actividad_2_5.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
+        "title": "Sección sin información",
+        "embed": "<iframe loading='lazy' src='' class='embed-responsive-item' frameborder='0'></iframe>"
       }
     ],
     "contenido": [
@@ -221,66 +150,10 @@
     "recurso": [
       {
         "seccion": 2.0,
-        "titulo": "Proceso Administrativo",
-        "descripcionRecurso": "¿Quieres saber más?",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' scrolling='no' style='border:0px' src='https://books.google.com.gt/books?id=b8_hBAAAQBAJ&lpg=PR4&hl=es&pg=PP1&output=embed'></iframe>"
-      },
-      {
-        "seccion": 2.0,
-        "titulo": "La Pinche Complejidad con Nicolás Alvarado",
-        "descripcionRecurso": "La complejidad de la comida y su gentrificación en la CDMX, discutamos el tema",
-        "category": "podcast",
-        "recurso": "<iframe src='https://open.spotify.com/embed/episode/0r1r2m4WzERzASnUADDFZs?utm_source=generator' class='embed-responsive-item' frameBorder='0' allowfullscreen='' allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture' loading='lazy'></iframe>"
-      },
-      {
-        "seccion": 2.0,
-        "titulo": "Los Pericos - Todos lo Hacen",
-        "descripcionRecurso": "Reflexionemos sobre valores.",
+        "titulo": "Sección sin información",
+        "descripcionRecurso": "Add description",
         "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube-nocookie.com/embed/RV47ycSh5vU?si=VNaRR-T5Nqno8gM8' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.1,
-        "titulo": "¿Cómo Hacer una Visión?",
-        "descripcionRecurso": "Miremos al futuro.",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/Lk6OfqndH1k' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.2,
-        "titulo": "¿Cómo Hacer una Misión?",
-        "descripcionRecurso": "Miremos el hoy.",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/d-IqjXIgyJg' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.3,
-        "titulo": "Cómo Determino los Valores Empresariales para mi Negocio?",
-        "descripcionRecurso": "¿Qué es un valor?",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/h5qoUg2jACw' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": "2.4",
-        "titulo": "Balanced Scorecard",
-        "descripcionRecurso": "Cuadro de Mando Integral.",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://express.adobe.com/video/9tEznS736I36p/embed' frameborder='0' allowfullscreen=''></iframe></div>"
-      },
-      {
-        "seccion": 2.6,
-        "titulo": "Qué es y Cómo se Hace un Análisis FODA?",
-        "descripcionRecurso": "¿Fortaleza o debilidad?",
-        "category": "video",
-        "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/_6vz0-Hx9cE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 2.7,
-        "titulo": "Gestión estratégica de la empresa",
-        "descripcionRecurso": "Presentación de genial.ly sobre la Gestión Estratégica de las empresas.",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='https://view.genial.ly/6154a6c25d28670d7f01b83e' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+        "recurso": "<h3 class='text-center'>Sección sin información</h3>"
       }
     ]
   },
@@ -298,14 +171,14 @@
       "Accesos"
     ],
     "evaluacion": "<iframe loading='lazy' src='assets/data/Evaluacion_2.pdf' style='width: 100%; height: 70rem;'></iframe>",
-    "autoevaluacion": "<iframe loading='lazy' frameborder='0'  style='width: 100%; height: 50rem;' src='https://view.genial.ly/625af435f8dc320011f3709d' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
-    "coevaluacion": "<iframe loading='lazy' frameborder='0' style='width: 100%; height: 50rem;' src='https://my.forms.app/form/6287930d95113a44f6a79b6b' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
+    "autoevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
+    "coevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
     "cuadroEval": "assets/img/bibliografia.png",
     "activities": [
       {
         "section": 3.1,
-        "title": "Test 1",
-        "embed": "<iframe loading='lazy' src='assets/data/Actividad_2_1.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
+        "title": "Sección sin información",
+        "embed": "<iframe loading='lazy' src='' class='embed-responsive-item' frameborder='0'></iframe>"
       }
     ],
     "contenido": [
@@ -355,7 +228,7 @@
         "recurso": ""
       }
     ],
-    "recurso": [
+    "presentaciones": [
       {
         "seccion": 3.1,
         "titulo": "Fundamentos de la capa física",
@@ -397,7 +270,23 @@
         "descripcionRecurso": "",
         "category": "reading",
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+      },  
+      {
+        "seccion": 3.3,
+        "titulo": "Estándar IEEE 802.3",
+        "descripcionRecurso": "",
+        "category": "reading",
+        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_3_EstandarIEEE802.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },
+      {
+        "seccion": 3.4,
+        "titulo": "Tecnologías de Control de Acceso al Medio",
+        "descripcionRecurso": "",
+        "category": "reading",
+        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_3_EstandarIEEE802.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+      }
+    ],
+    "recurso": [
       {
         "seccion": 3.2,
         "titulo": "Tutorial de instalacion de NPCAP en C",
@@ -433,7 +322,6 @@
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/o1XP_NobvtE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
-
       {
         "seccion": 3.2,
         "titulo": "Tutorial de como enviar archivos .PCAP por ethernet utilizando NPCAP en C",
@@ -482,27 +370,6 @@
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/h53mYo7WesM' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
-      },
-      {
-        "seccion": 3.3,
-        "titulo": "Estándar IEEE 802.3",
-        "descripcionRecurso": "",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_3_EstandarIEEE802.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
-      },
-      {
-        "seccion": 3.4,
-        "titulo": "Tecnologías de Control de Acceso al Medio",
-        "descripcionRecurso": "",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_3_EstandarIEEE802.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
-      },
-      {
-        "seccion": 3.5,
-        "titulo": "Presentación",
-        "descripcionRecurso": "Presentación de genial.ly sobre la Gestión Estratégica de las empresas.",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='https://view.genial.ly/6154a6c25d28670d7f01b83e' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       }
     ]
   },
@@ -525,8 +392,8 @@
     "activities": [
       {
         "section": 4.1,
-        "title": "Test 1",
-        "embed": "<iframe loading='lazy' src='assets/data/Actividad_2_1.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
+        "title": "Sección sin información",
+        "embed": "<iframe loading='lazy' src='' class='embed-responsive-item' frameborder='0'></iframe>"
       }
     ],
     "contenido": [
@@ -593,17 +460,17 @@
     "recurso": [
       {
         "seccion": 4.1,
-        "titulo": "Aún no existe información para esta unidad",
+        "titulo": "Sección sin información",
         "descripcionRecurso": "",
-        "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='https://www.orbit.es/wp-content/uploads/2019/09/redes-cloud.jpg' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+        "category": "video",
+        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },
       {
         "seccion": 4.2,
-        "titulo": "Presentación",
+        "titulo": "Sección sin información",
         "descripcionRecurso": "Presentación de genial.ly sobre la Gestión Estratégica de las empresas.",
         "category": "reading",
-        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='https://view.genial.ly/6154a6c25d28670d7f01b83e' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       }
     ]
   },
@@ -623,8 +490,8 @@
     "activities": [
       {
         "section": 5.1,
-        "title": "Test 1",
-        "embed": "<iframe loading='lazy' src='assets/data/Actividad_2_1.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
+        "title": "Sección sin información",
+        "embed": "<iframe loading='lazy' src='' class='embed-responsive-item' frameborder='0'></iframe>"
       }
     ],
     "contenido": [
