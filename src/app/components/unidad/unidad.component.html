@@ -6,17 +6,9 @@
         {{unidad.indice}}.
         {{unidad.titulo}}. De click en el título de cada sección para visualizar el contenido.
       </h4>
-      <div class="btn-group btn-group-lg btn-group-toggle w-100" data-toggle="buttons">
-        <label
-          [classList]="rsrcsCategory === 'video' ? 'btn btn-outline-info label-no-margin active':'btn btn-outline-info label-no-margin'"><input
-            type="radio" class="btn-check" name="rsrcsCategory" id="video" autocomplete="off" [value]="'video'"
-            [(ngModel)]="rsrcsCategory" />Videos</label>
-        <label
-          [classList]="rsrcsCategory === 'reading' ? 'btn btn-outline-info label-no-margin active':'btn btn-outline-info label-no-margin'"><input
-            type="radio" class="btn-check" name="rsrcsCategory" id="reading" autocomplete="off" [value]="'reading'"
-            [(ngModel)]="rsrcsCategory" />Lecturas</label>
-        
-      </div>
+      <h4 class="font-weight-bold w-100 mt-4 text-primary text-center">
+        Videos
+      </h4>
     </div>
     <h4 *ngIf="tipo == 0" class="font-weight-bold w-100 mt-4 mb-0">
       De click en el título de cada sección para visualizar el contenido.
