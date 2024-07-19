@@ -103,7 +103,7 @@
       "Control de errores",
       "Segmentación"
     ],
-    "evaluacion": "<iframe loading='lazy' src='assets/data/Evaluacion_2.pdf' style='width: 100%; height: 70rem;'></iframe>",
+    "evaluacion": "<h3 class='text-center'>Sección sin información</h3>",
     "autoevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
     "coevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
     "cuadroEval": "assets/img/bibliografia.png",
@@ -170,7 +170,7 @@
       "IEE 802.3",
       "Accesos"
     ],
-    "evaluacion": "<iframe loading='lazy' src='assets/data/Evaluacion_2.pdf' style='width: 100%; height: 70rem;'></iframe>",
+    "evaluacion": "<iframe loading='lazy' src='assets/data/Evaluacion_3.pdf' style='width: 100%; height: 70rem;'></iframe>",
     "autoevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
     "coevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
     "cuadroEval": "assets/img/bibliografia.png",
