@@ -172,7 +172,7 @@
     ],
     "evaluacion": "<iframe loading='lazy' src='assets/data/Evaluacion_3.pdf' style='width: 100%; height: 70rem;'></iframe>",
     "autoevaluacion": "<iframe loading='lazy' frameborder='0'  style='width: 100%; height: 50rem;' src='https://view.genially.com/669b03bf9c64fa04771f7f06' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
-    "coevaluacion": "<h3 class='text-center'>Sección sin información</h3>",
+    "coevaluacion": "<iframe loading='lazy' frameborder='0'  style='width: 100%; height: 50rem;' src='https://docs.google.com/forms/d/e/1FAIpQLSeDTd7XWEMBqPqMVbhpcgZTYVl0EeY2G5jh0X3u7bh3SQLntQ/viewform?embedded=true' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
     "cuadroEval": "assets/img/bibliografia.png",
     "activities": [
       {
