@@ -272,6 +272,20 @@
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },  
       {
+        "seccion": 3.2,
+        "titulo": "Protocolo de Resolución de Direcciones (ARP)",
+        "descripcionRecurso": "",
+        "category": "reading",
+        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/ARP.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+      },
+      {
+        "seccion": 3.2,
+        "titulo": "Protocolos de capa de Red y Transporte",
+        "descripcionRecurso": "",
+        "category": "reading",
+        "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/IP_ICMP_IGMP.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
+      },
+      {
         "seccion": 3.3,
         "titulo": "Estándar IEEE 802.3",
         "descripcionRecurso": "",
