@@ -177,8 +177,28 @@
     "activities": [
       {
         "section": 3.1,
-        "title": "Sección sin información",
-        "embed": "<iframe loading='lazy' src='' class='embed-responsive-item' frameborder='0'></iframe>"
+        "title": "Fundamentos de capa física",
+        "embed": "<iframe loading='lazy' src='https://view.genially.com/669e5beba3a0c502943dacbc' class='embed-responsive-item' frameborder='0'></iframe>"
+      },
+      {
+        "section": 3.2,
+        "title": "Práctica 11",
+        "embed": "<iframe loading='lazy' src='assets/data/Practica_11.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
+      },
+      {
+        "section": 3.3,
+        "title": "Práctica 12",
+        "embed": "<iframe loading='lazy' src='assets/data/Practica_12.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
+      },
+      {
+        "section": 3.3,
+        "title": "Práctica 13",
+        "embed": "<iframe loading='lazy' src='assets/data/Practica_13.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
+      },
+      {
+        "section": 3.4,
+        "title": "Tecnologías de control de acceso al medio",
+        "embed": "<iframe loading='lazy' src='assets/data/Actividad_3.4.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
       }
     ],
     "contenido": [
@@ -219,7 +239,7 @@
       },
       {
         "seccion": 3.4,
-        "titulo": "Tecnologías de Control de Acceso al Medio",
+        "titulo": "Tecnologías de control de acceso al medio",
         "descripcionRecurso": "",
         "keywords": [
           "Accesos, Medios compartidos, CSMA"
@@ -294,7 +314,7 @@
       },
       {
         "seccion": 3.4,
-        "titulo": "Tecnologías de Control de Acceso al Medio",
+        "titulo": "Tecnologías de control de acceso al medio",
         "descripcionRecurso": "",
         "category": "reading",
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_3_EstandarIEEE802.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
