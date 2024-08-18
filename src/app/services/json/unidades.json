@@ -172,7 +172,7 @@
     ],
     "evaluacion": "<iframe loading='lazy' src='assets/data/Evaluacion_3.pdf' style='width: 100%; height: 70rem;'></iframe>",
     "autoevaluacion": "<iframe loading='lazy' frameborder='0'  style='width: 100%; height: 50rem;' src='https://view.genially.com/669b03bf9c64fa04771f7f06' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
-    "coevaluacion": "<iframe loading='lazy' frameborder='0'  style='width: 100%; height: 50rem;' src='https://docs.google.com/forms/d/e/1FAIpQLSeDTd7XWEMBqPqMVbhpcgZTYVl0EeY2G5jh0X3u7bh3SQLntQ/viewform?embedded=true' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
+    "coevaluacion": "<iframe loading='lazy' frameborder='0'  style='width: 100%; height: 50rem;' src='https://docs.google.com/forms/d/e/1FAIpQLSeDTd7XWEMBqPqMVbhpcgZTYVl0EeY2G5jh0X3u7bh3SQLntQ/viewform' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>",
     "cuadroEval": "assets/img/bibliografia.png",
     "activities": [
       {
@@ -186,12 +186,12 @@
         "embed": "<iframe loading='lazy' src='assets/data/Practica_11.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
       },
       {
-        "section": 3.3,
+        "section": "",
         "title": "Práctica 12",
         "embed": "<iframe loading='lazy' src='assets/data/Practica_12.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
       },
       {
-        "section": 3.3,
+        "section": "",
         "title": "Práctica 13",
         "embed": "<iframe loading='lazy' src='assets/data/Practica_13.pdf' class='embed-responsive-item' frameborder='0'></iframe>"
       },
@@ -257,7 +257,7 @@
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_1_FundamentosDeCapaFisica.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },
       {
-        "seccion": 3.1,
+        "seccion": "",
         "titulo": "Ejemplos resueltos del tema",
         "descripcionRecurso": "",
         "category": "reading",
@@ -271,35 +271,35 @@
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/NIC_Npcap.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Acceso al controlador de la tarjeta de red en C",
         "descripcionRecurso": "",
         "category": "reading",
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='http://148.204.58.221/axel/redesnp/sniffer/NPCAP/' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Acceso al controlador de la tarjeta de red en JAVA",
         "descripcionRecurso": "",
         "category": "reading",
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/NIC_Pcap4J.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Acceso al controlador de la tarjeta de red en JAVA",
         "descripcionRecurso": "",
         "category": "reading",
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },  
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Protocolo de Resolución de Direcciones (ARP)",
         "descripcionRecurso": "",
         "category": "reading",
         "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/ARP.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Protocolos de capa de Red y Transporte",
         "descripcionRecurso": "",
         "category": "reading",
@@ -322,88 +322,95 @@
     ],
     "recurso": [
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Tutorial de instalacion de NPCAP en C",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/SeqaCDfdzpo' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Tutorial de como listar Interfaces de red con NPCAP en C",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/iEnKeBHVHqg' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Tutorial de como visualizar una trama utilizando NPCAP en C",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/cFgc22wn1e0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Tutorial de como analizar una trama utilizando NPCAP en C",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/CprEysiSZJE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Tutorial de como enviar tramas ethernet utilizando NPCAP en C",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/o1XP_NobvtE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Tutorial de como enviar archivos .PCAP por ethernet utilizando NPCAP en C",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/UtCxeBRJsZw' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Tutorial para Filtrar Tramas con NPCAP en C",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/LJJpbCcEpm0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Configuración de PCAPJ4 en Java",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/LWMB3PpejME' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Visualización de tramas con PCAP4J",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/mmOaHJsUKKs' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Análisis de la trama con PCAP4J",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/H8-HPkwSycc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Capturar Tramas en un archivo PCAP con PCAP4J",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/NovAYG12FEE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
       },
       {
-        "seccion": 3.2,
+        "seccion": "",
         "titulo": "Crear Tramas y Enviarlas Usando PCAP4J",
         "descripcionRecurso": "",
         "category": "video",
         "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/h53mYo7WesM' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
+      },
+      {
+        "seccion": "",
+        "titulo": "",
+        "descripcionRecurso": "",
+        "category": "",
+        "recurso": ""
       }
     ]
   },

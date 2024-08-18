@@ -2,9 +2,8 @@
   <article *ngIf="tipo == 1 || (tipo == 0 && selection == 'contenidos')">
     <div *ngIf="tipo == 1">
       <h4 class="font-weight-bold w-100 mt-4">
-        Aquí encontrarás videos auxiliares a la unidad <br>
-        {{unidad.indice}}.
-        {{unidad.titulo}}. De click en el título de cada sección para visualizar el contenido.
+        Aquí encontrarás videos auxiliares a la unidad <br> <br>
+        De click en el título de cada sección para visualizar el contenido.
       </h4>
     </div>
     <h4 *ngIf="tipo == 0" class="font-weight-bold w-100 mt-4 mb-0">
