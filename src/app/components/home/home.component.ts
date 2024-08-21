@@ -9,11 +9,11 @@ export class HomeComponent implements OnInit {
 
   responsables = [
     {
-      name : "Rocío Palacios Solano",
-      photo: "assets/img/prof1.jpg",
-      mail: "rpalacioss@ipn.mx",
-      info: "M. en C. <br/>Docente en ESCOM <br/> Project Manager en IPN",
-      intereses: "Administración de Proyectos PMI<br/> Gobernanza IT<br/> Seguridad de la Información<br/> Desarrollo de aplicaciones"
+      name : "Benjamín Cruz Torres",
+      photo: "assets/img/prof1.jpeg",
+      mail: "bcruzt@ipn.mx",
+      info: "Doctor en Ciencias de la Computación <br/>Docente en ESCOM",
+      intereses: "Inteligencia Artificial<br/> Reconocimiento de Patrones<br/> Computación distribuida"
     },
     {
       name : "Verónica Agustín Domínguez",
