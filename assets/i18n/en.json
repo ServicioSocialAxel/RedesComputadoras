@@ -1,0 +1,43 @@
+{
+    "app": {
+      "firstTitle": "Computer",
+      "secondTitle": "Networks",
+      "home": "Home",
+      "units": "Units",
+      "moreInfo": "More Information",
+      "lang": "Language",
+      "sources": "Sources",
+      "glossary": "Glossary",
+      "userManual": "User Manual",
+      "en": "English",
+      "es": "Spanish"
+    },
+    "home": {
+      "welcome": {
+        "title": "Welcome",
+        "embed": "https://www.youtube-nocookie.com/embed/HfG2zySCAw8?si=QCmEZVUb0DRsaqGG&cc_load_policy=1&cc_lang_pref=en&controls=1&autoplay=1",
+        "lemma": ""
+      },
+      "about-course": {
+        "title": "About the course",
+        "content": {
+          "header": "You are warmly welcomed to this Digital Didactic Resource (DDR) for the Computer Networks Learning Unit (LU) offered at the School of Computing of the National Polytechnic Institute. This DDR was developed with the purpose of promoting autonomous learning, as well as facilitating, enriching, and strengthening the teaching-learning processes of the LU in question in the traditional (in-person) modality. The learning unit contributes to the graduate profile of Computer Systems Engineering by developing skills in analyzing the functions of the Open Systems Interconnection reference model and the TCP/IP protocol stack, designing logical and physical topologies of a local area network according to EIA/TIA/ANSI standards, and configuring routing algorithms. Additionally, it fosters teamwork, leadership, and decision-making."
+        }
+      },
+      "methodology": { "title": "Methodology" },
+      "competence": { "title": "Competency unit" },
+      "eval": { "title": "Evaluation" },
+      "strat": { "title": "Learning strategies" },
+      "prog": { "title": "Program" },
+      "contacts": { "title": "Contact: Ext. 52032" },
+      "req": { "title": "Requirements" }
+    },
+    "unit": {
+      "1": "{{index}}. Networking fundamentals",
+      "2": "{{index}}. Data transmission",
+      "3": "{{index}}. Network access layer",
+      "4": "{{index}}. Internet layer",
+      "5": "{{index}}. Transport layer"
+    }
+  }
+  
