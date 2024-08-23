@@ -1,0 +1,53 @@
+{
+    "app": {
+      "firstTitle": "Redes de",
+      "secondTitle": "Computadoras",
+      "home": "Inicio",
+      "units": "Unidades",
+      "moreInfo": "Más información",
+      "lang": "Idioma",
+      "sources": "Fuentes de consulta",
+      "glossary": "Glosario",
+      "userManual": "Manual de usuario",
+      "en": "Inglés",
+      "es": "Español"
+    },
+    "home": {
+      "welcome": {
+        "title": "Bienvenida",
+        "embed": "https://www.youtube-nocookie.com/embed/HfG2zySCAw8?si=QCmEZVUb0DRsaqGG&controls=1&autoplay=1",
+        "lemma": ""
+      },
+      "about-course": {
+        "title": "Sobre el curso",
+        "content": {
+          "header": "Recibe la más cordial bienvenida a este recurso didáctico digital (RDD) de la Unidad de Aprendizaje (UA) de Redes de Computadoras que se imparte en la Escuela Superior de Cómputo del Instituto Politécnico Nacional. Este RDD fue construido con el propósito de promover el aprendizaje autónomo, así como de facilitar, enriquecer y fortalecer los procesos de enseñanza-aprendizaje de la UA en cuestión en la modalidad escolarizada. La unidad de aprendizaje contribuye al perfil de egreso de Ingeniería en Sistemas Computacionales con el desarrollo de las habilidades de análisis de las funciones del modelo de referencia para interconexión de sistemas abiertos y la pila de protocolos de la arquitectura TCP/IP, el diseño de topologías lógica y física de una red de área local de acuerdo a los estándares EIA/TIA/ANSI. Así como la configuración de algoritmos de enrutamiento. Asimismo, fomenta el trabajo en equipo, el liderazgo y la toma de decisiones."
+        }
+      },
+      "methodology": {
+        "title": "Metodología",
+        "content": {
+          "header": "El alumnado desarrollará las siguientes actividades:"
+        }
+      },
+      "competence": {
+        "title": "Unidad de competencia",
+        "content": {
+          "header": "Diseña las topologías lógica y física de una red de área local a partir de sus fundamentos, técnicas de transmisión de datos y capas de acceso a la red, Internet y transporte."
+        }
+      },
+      "eval": { "title": "Evaluación" },
+      "strat": { "title": "Estrategias de aprendizaje" },
+      "prog": { "title": "Programa de estudios" },
+      "contacts": { "title": "Contactos" },
+      "req": { "title": "Requerimientos" }
+    },
+    "unit": {
+      "1": "Fundamentos de red",
+      "2": "Transmisión de datos",
+      "3": "Capa de acceso a la red",
+      "4": "Capa de internet",
+      "5": "Capa de transporte"
+    }
+  }
+  

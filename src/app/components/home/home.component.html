@@ -2,7 +2,7 @@
 
 <section class="section-welcome">
   <div class="container container-welcome">
-    <h2 class="text-center">Bienvenida</h2>
+    <h2 class="text-center">{{ 'home.welcome.title' | translate }}</h2>
     <div style="display: flex; flex-direction: column; align-items: center;">
       <iframe width="560" height="315"
         src="https://www.youtube-nocookie.com/embed/apERZNCEYPY?si=oLKTDopVjMVNxVpY&amp;controls=0&autoplay=1"
@@ -20,7 +20,7 @@
     </div>
     <div class="aux-reque">
       <!-- <h1 class="m-0">¡¡¡Bienvenidos!!!</h1> -->
-      <h2>Sobre el Curso</h2>
+      <h2>{{ 'home.about-course.title' | translate }}</h2>
       <p>
         Recibe la más cordial bienvenida a este recurso didáctico digital (RDD) de la Unidad de Aprendizaje (UA)
         de Redes de Computadoras que se imparte en la Escuela Superior de Cómputo del Instituto Politécnico
@@ -43,7 +43,7 @@
 <section class="meto">
   <div class="grid-meto">
     <div class="aux-reque">
-      <h2>Metodología</h2>
+      <h2>{{ 'home.methodology.title' | translate }}</h2>
       El alumnado desarrollará las siguientes actividades:
       <ol>
         <li>Indagación documental de los temas a tratar en cada clase </li>
@@ -65,7 +65,7 @@
 
 <section class="competencia-section">
   <div class="container div-competencia">
-    <h2 class="text-center">Unidad de Competencia</h2>
+    <h2 class="text-center">{{ 'home.competence.title' | translate }}</h2>
     <div class="competencia-text">
       <div class="competence-img">
         <p class="image-source" style="font-size: smaller;">Fuente: https://unsplash.com/photos/person-holding-pencil-near-laptop-computer-5fNmWej4tAA?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash</p>
@@ -85,7 +85,7 @@
       <p class="image-source">Fuente: https://unsplash.com/photos/macbook-pro-near-white-open-book-FHnnjk1Yj7Y?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash</p>
     </div>
     <div class="aux-reque">
-      <h2>Evaluación</h2>
+      <h2>{{ 'home.eval.title' | translate }}</h2>
       Evaluación diagnóstica.<br>
       Portafolio de evidencias:
       <ol>
@@ -111,7 +111,7 @@
 <section class="estrat">
   <div class="grid-meto">
     <div class="aux-reque">
-      <h2>Estrategias de Aprendizaje</h2>
+      <h2>{{ 'home.strat.title' | translate }}</h2>
       El alumnado desarrollará las siguientes actividades:
       <ol>
         <li>Indagación documental de los temas a tratar en cada clase.</li>
@@ -133,8 +133,7 @@
 
 <section class="competencia-section">
   <div class="container div-competencia">
-    <h2 class="text-center"><a class="text-primary" data-toggle="modal" [attr.data-target]="'#program'">Programa de
-      estudios</a></h2>
+    <h2 class="text-center"><a class="text-primary" data-toggle="modal" [attr.data-target]="'#program'">{{ 'home.prog.title' | translate }}</a></h2>
     <div class="competencia-text">
       <img class="qr-container" src="assets/img/qr.png" alt="Imagen Cargada" />
       <div id="contactos"></div>
@@ -146,7 +145,7 @@
 </section>
 
 <section class="container categories">
-  <h2 class="text-center">Contactos: Ext. 52032</h2>
+  <h2 class="text-center">{{ 'home.contacts.title' | translate }}: Ext. 52032</h2>
   <div class="list-cat">
     <div *ngFor="let item of responsables;let idx = index" class="category">
       <div class="prof-photo" [style]="'background-image: url('+item.photo+');'"></div>
@@ -185,7 +184,7 @@
 <section class="reque">
   <div class="grid-reque">
     <div class="aux-reque">
-      <h2>Requerimientos</h2>
+      <h2>{{ 'home.req.title' | translate }}</h2>
       <p>
         Dispositivo móvil:
       </p>

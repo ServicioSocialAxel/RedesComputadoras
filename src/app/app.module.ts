@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing, routingProviders } from './app.routing';
-
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { RecursosComponent } from './components/recursos/recursos.component';
@@ -14,7 +14,13 @@ import { GlosarioComponent } from './components/glosario/glosario.component';
 import { DataTablesModule } from 'angular-datatables';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { HttpClientModule } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// Función para cargar traducciones
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -33,12 +39,17 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     DataTablesModule,
     HttpClientModule,
-    //PdfViewerModule
+    TranslateModule.forRoot({
+      defaultLanguage: 'es',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
-  providers: [
-    routingProviders
-  ],
-  bootstrap: [AppComponent]
+  providers: [HttpClient, routingProviders],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
 

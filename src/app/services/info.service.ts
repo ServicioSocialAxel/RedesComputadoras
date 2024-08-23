@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import unidades from './json/unidades.json'
+import units from './assets/i18n/es.json'
 import autoevaluaciones from './json/autoevaluaciones.json';
 import glosario from './json/glosario.json';
 import { saveAs } from "file-saver"
@@ -14,6 +15,16 @@ export class InfoService {
 
   getUnidades(){
     return unidades;
+  }
+
+  getTitleUnits() {
+    return [
+      { indice: '1', titulo: 'unit.1' },
+      { indice: '2', titulo: 'unit.2' },
+      { indice: '3', titulo: 'unit.3' },
+      { indice: '4', titulo: 'unit.4' },
+      { indice: '5', titulo: 'unit.5' }
+    ];
   }
 
   getAutoevaluaciones(){
