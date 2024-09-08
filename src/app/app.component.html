@@ -126,19 +126,19 @@
     <div>
       <h3>{{ 'footer.units' | translate }}</h3>
       <nav class="nav-foot">
-        <a *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+        <a *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.- {{item.titulo | translate}}</a>
       </nav>
     </div>
     <div>
         <h3>{{ 'footer.resources' | translate }}</h3>
         <nav class="nav-foot">
-          <a *ngFor="let item of unidades" [routerLink]="['recursos',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+          <a *ngFor="let item of unidades" [routerLink]="['recursos',item.indice]">{{item.indice}}.- {{item.titulo | translate}}</a>
         </nav>
     </div>
     <div>
       <h3>{{ 'footer.autoev' | translate }}</h3>
       <nav class="nav-foot">
-        <a *ngFor="let item of unidades" [routerLink]="['evaluaciones',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+        <a *ngFor="let item of unidades" [routerLink]="['evaluaciones',item.indice]">{{item.indice}}.- {{item.titulo | translate}}</a>
       </nav>
     </div>
   </div>
