@@ -124,19 +124,19 @@
 <footer class="site-footer">
   <div class="grid-footer container">
     <div>
-      <h3>Unidades</h3>
+      <h3>{{ 'footer.units' | translate }}</h3>
       <nav class="nav-foot">
         <a *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
       </nav>
     </div>
     <div>
-        <h3>Recursos</h3>
+        <h3>{{ 'footer.resources' | translate }}</h3>
         <nav class="nav-foot">
           <a *ngFor="let item of unidades" [routerLink]="['recursos',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
         </nav>
     </div>
     <div>
-      <h3>Autoevaluación</h3>
+      <h3>{{ 'footer.autoev' | translate }}</h3>
       <nav class="nav-foot">
         <a *ngFor="let item of unidades" [routerLink]="['evaluaciones',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
       </nav>

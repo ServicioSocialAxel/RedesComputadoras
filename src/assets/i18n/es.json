@@ -21,13 +21,23 @@
       "about-course": {
         "title": "Sobre el curso",
         "content": {
-          "header": "Recibe la más cordial bienvenida a este recurso didáctico digital (RDD) de la Unidad de Aprendizaje (UA) de Redes de Computadoras que se imparte en la Escuela Superior de Cómputo del Instituto Politécnico Nacional. Este RDD fue construido con el propósito de promover el aprendizaje autónomo, así como de facilitar, enriquecer y fortalecer los procesos de enseñanza-aprendizaje de la UA en cuestión en la modalidad escolarizada. La unidad de aprendizaje contribuye al perfil de egreso de Ingeniería en Sistemas Computacionales con el desarrollo de las habilidades de análisis de las funciones del modelo de referencia para interconexión de sistemas abiertos y la pila de protocolos de la arquitectura TCP/IP, el diseño de topologías lógica y física de una red de área local de acuerdo a los estándares EIA/TIA/ANSI. Así como la configuración de algoritmos de enrutamiento. Asimismo, fomenta el trabajo en equipo, el liderazgo y la toma de decisiones."
+          "header": "Recibe la más cordial bienvenida a este recurso didáctico digital (RDD) de la Unidad de Aprendizaje (UA) de Redes de Computadoras que se imparte en la Escuela Superior de Cómputo del Instituto Politécnico Nacional. Este RDD fue construido con el propósito de promover el aprendizaje autónomo, así como de facilitar, enriquecer y fortalecer los procesos de enseñanza-aprendizaje de la UA en cuestión en la modalidad escolarizada. La unidad de aprendizaje contribuye al perfil de egreso de Ingeniería en Sistemas Computacionales con el desarrollo de las habilidades de análisis de las funciones del modelo de referencia para interconexión de sistemas abiertos y la pila de protocolos de la arquitectura TCP/IP, el diseño de topologías lógica y física de una red de área local de acuerdo a los estándares EIA/TIA/ANSI. Así como la configuración de algoritmos de enrutamiento. Asimismo, fomenta el trabajo en equipo, el liderazgo y la toma de decisiones.",
+          "main-text": "La unidad de aprendizaje contribuye al perfil de egreso de Ingeniería en Sistemas Computacionales con el desarrollo de las habilidades de análisis de las funciones del modelo de referencia para interconexión de sistemas abiertos y la pila de protocolos de la arquitectura TCP/IP, el diseño de topologías lógica y física de una red de área local de acuerdo a los estándares EIA/TIA/ANSI. Así como la configuración de algoritmos de enrutamiento. Asimismo, fomenta el trabajo en equipo, el liderazgo y la toma de decisiones."
         }
       },
       "methodology": {
         "title": "Metodología",
         "content": {
-          "header": "El alumnado desarrollará las siguientes actividades:"
+          "header": "El alumnado desarrollará las siguientes actividades:",
+          "list": {
+            "i1": "Indagación documental de los temas a tratar en cada clase",
+            "i2": "Discusión dirigida de los conceptos para la programación del analizador de protocolos.",
+            "i3": "Organizadores gráficos",
+            "i4": "Uso de algún sniffer para poder manipular paquetes que contengan dichos protocolos.",
+            "i5": "Uso de algún simulador/emulador de redes para el diseño de la red.",
+            "i6": "Desarrollo de un proyecto integrado por fases a lo largo de las cuatro unidades temáticas que consta de un analizador de protocolos y configuración de escenarios de red.",
+            "i7": "Realización de las prácticas"
+          }
         }
       },
       "competence": {
@@ -36,11 +46,89 @@
           "header": "Diseña las topologías lógica y física de una red de área local a partir de sus fundamentos, técnicas de transmisión de datos y capas de acceso a la red, Internet y transporte."
         }
       },
-      "eval": { "title": "Evaluación" },
-      "strat": { "title": "Estrategias de aprendizaje" },
-      "prog": { "title": "Programa de estudios" },
-      "contacts": { "title": "Contactos" },
-      "req": { "title": "Requerimientos" }
+      "eval": { 
+        "title": "Evaluación",
+        "content": {
+          "header": "Evaluación diagnóstica.",
+          "sub-header": "Portafolio de evidencias:",
+          "list": {
+            "i1": "Reporte de indagación",
+            "i2": "Programas de cómputo documentados y ejecutados correctamente.",
+            "i3": "Organizadores gráficos.",
+            "i4": "Analizador de protocolos ejecutado correctamente.",
+            "i5": "Configuración de escenarios en simuladores/emuladores de red.",
+            "i6": "Fase 1 del proyecto: configuración del controlador de la tarjeta de red en modo promiscuo para la captura de tramas",
+            "i7": "Fase 2 del proyecto: análisis de los protocolos de la capa de acceso a la red",
+            "i8": "Fase 3 del proyecto: análisis de los protocolos de la capa de Interred",
+            "i9": "Fase 4 del proyecto: análisis de los protocolos de la capa de Transporte",
+            "i10": "Fase 5 del proyecto: funciones adicionales: filtrado de tramas, importación y exportación de tramas.",
+            "i11": "Fase 6 del proyecto: configuración de un escenario de red en algún simulador/emulador.",
+            "i12": "Reportes de prácticas",
+            "i13": "Evaluación escrita"
+          }
+        } 
+      },
+      "strat": { 
+        "title": "Estrategias de aprendizaje",
+        "content": {
+          "header": "El alumnado desarrollará las siguientes actividades:",
+          "list": {
+            "i1": "Indagación documental de los temas a tratar en cada clase.",
+            "i2": "Discusión dirigida de los conceptos para la programación del analizador de protocolos.",
+            "i3": "Organizadores gráficos.",
+            "i4": "Uso de algún sniffer para poder manipular paquetes que contengan dichos protocolos.",
+            "i5": "Uso de algún simulador/emulador de redes para el diseño de la red.",
+            "i6": "Desarrollo de un proyecto integrado por fases a lo largo de las cuatro unidades temáticas que consta de un analizador de protocolos y configuración de escenarios de red.",
+            "i7": "Realización de las prácticas."
+          }
+        }
+      },
+      "prog": { 
+        "title": "Programa de estudios", 
+        "content": {
+          "header": "Escanea el código QR para descargar el Programa de Estudios."
+        }
+      },
+      "contacts": { 
+        "title": "Contactos",
+        "content": {
+          "text-1": "Desarrollo profesional:",
+          "text-2": "Áreas de interés:"
+        },
+        "footer": "Más acerca del docente"
+      },
+      "req": { 
+        "title": "Requerimientos", 
+        "content": {
+          "list-1": {
+            "title": "Dispositivo móvil:",
+            "i1": "Android 4.4 o superior",
+            "i2": "iOS 9.0 o superior",
+            "i3": "Conexión a internet"
+          },
+          "list-2": {
+            "title": "Equipo de cómputo:",
+            "i1" : "Procesador: 500 MHz o superior",
+            "i2": "Memoria: 256 MB o superior",
+            "i3": "Almacenamiento: 500 MB o superior",
+            "i4": "Conexión a internet"
+          },
+          "list-3": {
+            "title": "Navegadores soportados:",
+            "i1" : "Internet Explorer 10 o superior",
+            "i2": "Microsoft Edge",
+            "i3": "Mozilla Firefox 38 o superior",
+            "i4": "Google Chrome 45 o superior",
+            "i5": "Opera 30 o superior",
+            "i6": "Safari 9 o superior"
+          }
+        }
+      }
+    },
+    "footer": {
+      "units": "Unidades",
+      "resources": "Recursos",
+      "autoev": "Autoevaluación"
     },
     "unit": {
       "1": "Fundamentos de red",
