@@ -136,6 +136,19 @@
       "3": "Capa de acceso a la red",
       "4": "Capa de internet",
       "5": "Capa de transporte"
+    },
+    "units-info": {
+      "indice": 1,
+      "titulo": "Fundamentos de redes",
+      "imagen": "https://i.go-travels.com/img/how-to/networking-fundamentals.jpg",
+      "competencia": "Analiza los fundamentos de redes de computadoras con base en su clasificación, organizaciones de estandarización, el modelo OSI, la arquitectura TCP/IP.",
+      "keywords": [
+        "Redes",
+        "Clasificación",
+        "Estandares",
+        "OSI",
+        "TCP/IP"
+      ]
     }
   }
   
