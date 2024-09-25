@@ -1,0 +1,178 @@
+{
+    "app": {
+      "firstTitle": "Computer",
+      "secondTitle": "Networks",
+      "home": "Home",
+      "units": "Units",
+      "moreInfo": "More Information",
+      "lang": "Language",
+      "sources": "Sources",
+      "glossary": "Glossary",
+      "userManual": "User Manual",
+      "en": "English",
+      "es": "Spanish"
+    },
+    "home": {
+      "welcome": {
+        "title": "Welcome",
+        "embed": "https://www.youtube-nocookie.com/embed/HfG2zySCAw8?si=QCmEZVUb0DRsaqGG&cc_load_policy=1&cc_lang_pref=en&controls=1&autoplay=1",
+        "lemma": ""
+      },
+      "about-course": {
+        "title": "About the course",
+        "content": {
+          "header": "You are warmly welcomed to this Digital Didactic Resource (DDR) for the Computer Networks Learning Unit (LU) offered at the School of Computing of the National Polytechnic Institute. This DDR was developed with the purpose of promoting autonomous learning, as well as facilitating, enriching, and strengthening the teaching-learning processes of the LU in question in the traditional (in-person) modality. The learning unit contributes to the graduate profile of Computer Systems Engineering by developing skills in analyzing the functions of the Open Systems Interconnection reference model and the TCP/IP protocol stack, designing logical and physical topologies of a local area network according to EIA/TIA/ANSI standards, and configuring routing algorithms. Additionally, it fosters teamwork, leadership, and decision-making.",
+          "main-text": "The learning unit contributes to the graduate profile of Computer Systems Engineering by developing skills in analyzing the functions of the Open Systems Interconnection (OSI) reference model and the TCP/IP protocol stack, as well as designing logical and physical topologies for local area networks (LAN) in accordance with EIA/TIA/ANSI standards. Additionally, it covers the configuration of routing algorithms. Furthermore, it promotes teamwork, leadership, and decision-making skills."
+        }
+      },
+      "methodology": { 
+        "title": "Methodology",
+        "content": {
+          "header": "The students will engage in the following activities:",
+          "list": {
+            "i1": "Documentary research on the topics to be covered in each class",
+            "i2": "Guided discussion of concepts for programming the protocol analyzer.",
+            "i3": "Graphic organizers",
+            "i4": "Use of a sniffer to manipulate packages containing the protocols.",
+            "i5": "Use of a network simulator/emulator for network design",
+            "i6": "Development of a phased project throughout the four thematic units, including a protocol analyzer and network scenario configuration.",
+            "i7": "Completion of practical exercises"
+          }
+        }
+      },
+      "competence": { 
+        "title": "Competency unit",
+        "content": {
+          "header": "Design the logical and physical topologies of a local area network based on its fundamentals, data transmission techniques, and network, internet, and transport layers."
+        }
+      },
+      "eval": { 
+        "title": "Evaluation", 
+        "content": {
+          "header": "",
+          "sub-header": "",
+          "list": {
+            "i1": "Inquiry report",
+            "i2": "Documented and correctly executed software programs.",
+            "i3": "Graphic organizers.",
+            "i4": "Protocol analyzer correctly executed.",
+            "i5": "Configuration of scenarios in network simulators/emulators.",
+            "i6": "Phase 1 of the project: configuration of the network card driver in promiscuous mode for frame capture",
+            "i7": "Phase 2 of the project: analysis of network access layer protocols",
+            "i8": "Phase 3 of the project: analysis of internetworking layer protocols",
+            "i9": "Phase 4 of the project: analysis of transport layer protocols",
+            "i10": "Phase 5 of the project: additional functions: frame filtering, frame import and export.",
+            "i11": "Phase 6 of the project: configuration of a network scenario in a simulator/emulator.",
+            "i12": "Practical reports",
+            "i13": "Written assessment"
+          }
+        }
+      },
+      "strat": { 
+        "title": "Learning strategies",
+        "content": {
+          "header": "Students will carry out the following activities:",
+          "list": {
+            "i1": "Documentary research on the topics to be covered in each class.",
+            "i2": "Guided discussion of concepts for programming the protocol analyzer.",
+            "i3": "Graphic organizers.",
+            "i4": "Use of a sniffer to manipulate packets containing the protocols.",
+            "i5": "Use of a network simulator/emulator for network design.",
+            "i6": "Development of a phased project throughout the four thematic units, including a protocol analyzer and network scenario configuration.",
+            "i7": "Completion of practical exercises."
+          }
+        } 
+      },
+      "prog": { 
+        "title": "Syllabus", 
+        "content": {
+          "header": "Scan the QR code to download the Syllabus."
+        }     
+      },
+      "contacts": { 
+        "title": "Contact", 
+        "content": {
+          "text-1": "Professional development:",
+          "text-2": "Areas of interest:"
+        },
+        "footer": "More about the teacher"
+      },
+      "req": { 
+        "title": "Requirements", 
+        "content": {
+          "list-1": {
+            "title": "Mobile Device:",
+            "i1": "Android 4.4 or higher",
+            "i2": "iOS 9.0 or higher",
+            "i3": "Internet connection"
+          },
+          "list-2": {
+            "title": "Computer Equipment:",
+            "i1": "Processor: 500 MHz or higher",
+            "i2": "Memory: 256 MB or higher",
+            "i3": "Storage: 500 MB or higher",
+            "i4": "Internet connection"
+          },
+          "list-3": {
+            "title": "Supported Browsers:",
+            "i1": "Internet Explorer 10 or higher",
+            "i2": "Microsoft Edge",
+            "i3": "Mozilla Firefox 38 or higher",
+            "i4": "Google Chrome 45 or higher",
+            "i5": "Opera 30 or higher",
+            "i6": "Safari 9 or higher"
+          }
+        }
+      }
+    },
+    "footer": {
+      "units": "Units",
+      "resources": "Resources",
+      "autoev": "Self-assessment"
+    },
+    "unit": {
+      "1": "Networking fundamentals",
+      "2": "Data transmission",
+      "3": "Network access layer",
+      "4": "Internet layer",
+      "5": "Transport layer"
+    },
+    "units-info": {
+      "prefix": "Unit",
+      "pre-titulo": "Unit of competence",
+      "content-table": {
+        "item-1": "Content",
+        "item-2": "Unit-based assessment",
+        "item-3": "Learning activities",
+        "item-4": "Self-assessment",
+        "item-5": "Co-assessment",
+        "item-6": "Presentation",
+        "item-7": "Additional material"
+      },
+      "text-1": "Click on the title of each section to view the content.",
+      "text-2": "Click on the title of the activity to view the content.",
+      "text-3": "Click on the title of the presentation to view its content.",
+      "text-4": "Here you will find auxiliary videos to the unit"
+    },
+    "sources": {
+      "title": "Sources",
+      "image": "assets/img/sources.png"
+    },
+    "glossary": {
+      "title": "Computer Networks Glossary",
+      "word": "Word",
+      "concept": "Concept"
+    },
+    "datatable": {
+      "search": "Search",
+      "paginate": {
+        "first": "First",
+        "last": "Last",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "info": "Showing _START_ to _END_ of _TOTAL_ records",
+      "lengthMenu": "Show _MENU_ entries"
+    }
+  }
+  
