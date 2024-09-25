@@ -2,12 +2,12 @@
   <article *ngIf="tipo == 1 || (tipo == 0 && selection == 'contenidos')">
     <div *ngIf="tipo == 1">
       <h4 class="font-weight-bold w-100 mt-4">
-        Aquí encontrarás videos auxiliares a la unidad <br> <br>
-        De click en el título de cada sección para visualizar el contenido.
+        {{ 'units-info.text-4' | translate }} <br> <br>
+        {{ 'units-info.text-1' | translate }}
       </h4>
     </div>
     <h4 *ngIf="tipo == 0" class="font-weight-bold w-100 mt-4 mb-0">
-      De click en el título de cada sección para visualizar el contenido.
+      {{ 'units-info.text-1' | translate }}
     </h4>
     <div class="card"
       *ngFor="let item of tipo == 0 ? unidad.contenido : unidad.recurso.length > 1 ? unidad.recurso.slice(0, -1).filter(rscCategortyFilter) : unidad.recurso;let idx = index">
@@ -47,7 +47,7 @@
       {{unidad.indice}}. {{unidad.titulo}}
     </h3>
     <h4 class="w-100 mb-0" *ngIf="unidad.activities">
-      De click en el título de la actividad para visualizar el contenido.
+      {{ 'units-info.text-2' | translate }}
     </h4>
     <h4 class="text-center mt-4" *ngIf=" !unidad.activities">
       Sección sin información.
@@ -82,7 +82,7 @@
   </article>
   <article *ngIf="tipo == 0 && selection == 'presentacion'">
     <h4 class="font-weight-bold w-100 mt-4 mb-0" *ngIf="unidad.presentaciones">
-      De click en el título de la presentación para visualizar su contenido.
+      {{ 'units-info.text-3' | translate }}
     </h4>
     <h4 class="text-center mt-4" *ngIf=" !unidad.presentaciones">
       Sección sin información.

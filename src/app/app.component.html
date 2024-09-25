@@ -1,7 +1,7 @@
 <header class="nav-main-header sticky-header" [ngClass]="{'sticky': isSticky}">
   <div class="logos" [routerLink]="['/']" (click)="collapse()">
     <img class="img-logo" src="assets/img/ipn.png" alt="escom">
-    <h2 class="redes-text">Redes de <p><span>Computadoras</span></p></h2>
+    <h2 class="redes-text">{{ 'app.firstTitle' | translate }} <p><span>{{ 'app.secondTitle' | translate }}</span></p></h2>
     <h2 class="escom-text">Escuela Superior de <p><span>Cómputo</span></p></h2>
     <img class="img-logo right right-column" src="assets/img/escom.png" alt="escom">
   </div>
@@ -13,48 +13,47 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" (click)="collapse()" *ngIf="currentLink != '/'">
-            <a class="nav-link font-weight-bold h3" [routerLink]="['/']">Inicio</a>
+            <a class="nav-link font-weight-bold h3" [routerLink]="['/']">{{ 'app.home' | translate }}</a>
           </li>
 
           <li class="nav-item dropdown" *ngIf="currentLink == '/'">
             <a class="nav-link dropdown-toggle font-weight-bold h3" id="navbarDropdown" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inicio</a>
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ 'app.home' | translate }}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" [routerLink]="['/']" (click)="collapse()">
               <a class="dropdown-item font-weight-bold h5" *ngFor="let item of navs"
-                (click)="goToId(item.link)">{{item.title}}</a>
+                (click)="goToId(item.link)">{{ item.title }}</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle font-weight-bold h3" href="#" id="navbarDropdown" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Unidades</a>
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ 'app.units' | translate }}</a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapse()">
               <a class="dropdown-item font-weight-bold h5 text-truncate" style="max-width: 90vw;"
-                *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.-
-                {{item.titulo}}</a>
+                *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.- {{ item.titulo | translate }}</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle font-weight-bold h3" href="#" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
-              &nbsp; Más información
+              &nbsp; {{ 'app.moreInfo' | translate }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapse()">
               <a class="dropdown-item font-weight-bold h5" data-toggle="modal" [attr.data-target]="'#biblio'"><i
-                  class="bi bi-card-text"></i>&nbsp; Fuentes de consulta</a>
+                  class="bi bi-card-text"></i>&nbsp; {{ 'app.sources' | translate }}</a>
               <a class="dropdown-item font-weight-bold h5" data-toggle="modal" [attr.data-target]="'#glosario'"><i
-                  class="bi bi-journal-text"></i>&nbsp; Glosario</a>
+                  class="bi bi-journal-text"></i>&nbsp; {{ 'app.glossary' | translate }}</a>
               <a class="dropdown-item font-weight-bold h5" data-toggle="modal" [attr.data-target]="'#usermanual'"><i
-                  class="bi bi-question-circle"></i>&nbsp; Manual de usuario</a>
+                  class="bi bi-question-circle"></i>&nbsp; {{ 'app.userManual' | translate }}</a>
             </div>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle font-weight-bold h3" href="#" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false"><i class="bi bi-globe"></i>&nbsp;Idioma
+              aria-haspopup="true" aria-expanded="false"><i class="bi bi-globe"></i>&nbsp;{{ 'app.lang' | translate }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown" (click)="collapse()">
-              <button role="a" value="es" class="dropdown-item font-weight-bolder h5 text-dark">Español</button>
-              <button role="a" value="eng" class="dropdown-item font-weight-bold h5 disabled" disabled>English</button>
-            </div>
+              <button role="a" value="es" class="dropdown-item font-weight-bolder h5 text-dark" (click)="changeLanguage('es')">{{ 'app.es' | translate }}</button>
+              <button role="a" value="eng" class="dropdown-item font-weight-bold h5" (click)="changeLanguage('en')">{{ 'app.en' | translate }}</button>
+            </div>            
           </li>          
         </ul>
       </div>
@@ -65,14 +64,14 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h2 class="modal-title">Bibliografía</h2>
+        <h2 class="modal-title">{{ 'sources.title' | translate }}</h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span>&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="container">
-          <img src="assets/img/bibliografia.png" alt="">
+          <img src="{{ 'sources.image' | translate }}" alt="">
         </div>
       </div>
     </div>
@@ -125,21 +124,21 @@
 <footer class="site-footer">
   <div class="grid-footer container">
     <div>
-      <h3>Unidades</h3>
+      <h3>{{ 'footer.units' | translate }}</h3>
       <nav class="nav-foot">
-        <a *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+        <a *ngFor="let item of unidades" [routerLink]="['unidades',item.indice]">{{item.indice}}.- {{item.titulo | translate}}</a>
       </nav>
     </div>
     <div>
-        <h3>Recursos</h3>
+        <h3>{{ 'footer.resources' | translate }}</h3>
         <nav class="nav-foot">
-          <a *ngFor="let item of unidades" [routerLink]="['recursos',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+          <a *ngFor="let item of unidades" [routerLink]="['recursos',item.indice]">{{item.indice}}.- {{item.titulo | translate}}</a>
         </nav>
     </div>
     <div>
-      <h3>Autoevaluación</h3>
+      <h3>{{ 'footer.autoev' | translate }}</h3>
       <nav class="nav-foot">
-        <a *ngFor="let item of unidades" [routerLink]="['evaluaciones',item.indice]">{{item.indice}}.- {{item.titulo}}</a>
+        <a *ngFor="let item of unidades" [routerLink]="['evaluaciones',item.indice]">{{item.indice}}.- {{item.titulo | translate}}</a>
       </nav>
     </div>
   </div>
