@@ -3,6 +3,7 @@ import unidades from './json/unidades.json'
 import units from './json/en/units.json'
 import autoevaluaciones from './json/autoevaluaciones.json';
 import glosario from './json/glosario.json';
+import glossary from './json/glossary.json'
 import { saveAs } from "file-saver"
 import { HttpClient } from '@angular/common/http';
 
@@ -37,6 +38,10 @@ export class InfoService {
 
   getGlosario(){
     return glosario;
+  }
+
+  getGlossary(){
+    return glossary;
   }
 
   writeJSON(data: any){

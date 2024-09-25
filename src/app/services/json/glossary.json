@@ -1,0 +1,39 @@
+[
+    {
+      "word": "MAC",
+      "description": "The MAC (Medium Access Control) provides the data link layer with addressing and data delimitation according to the physical signaling requirements of the medium and the type of data link layer protocol in use."
+    },
+    {
+      "word": "LLC",
+      "description": "The LLC (Logical Link Control) places information in the frame that identifies which network layer protocol is being used by the frame."
+    },
+    {
+      "word": "HDLC",
+      "description": "HDLC (High-level Data Link Control) is a Data Link layer protocol responsible for defining how data should be encapsulated for transmission to a remote machine through dedicated links (WAN networks)."
+    },
+    {
+      "word": "Bandwidth",
+      "description": "Positive frequency range where the system response is relatively flat (signals can pass through without distortion)"
+    },
+    {
+      "word": "Channel Capacity",
+      "description": "The maximum speed at which data can be transmitted over a communication channel with a certain fidelity. It is measured in bits per second (bps)."
+    },
+    {
+      "word": "Noise",
+      "description": "Any unwanted signal that is mixed with the useful signal that is to be transmitted."
+    },
+    {
+      "word": "Frame",
+      "description": "A data transmission unit. It is a successive series of bits, organized in a cyclical manner, that carry information and that allow this information to be extracted upon reception"
+    },
+    {
+      "word": "IEEE",
+      "description": "IEEE (Institute of Electrical and Electronics Engineers) Network Standards<br>Its mission, in terms of networks, focuses on developing standards for local area networks and metropolitan area networks, mainly in the two lower layers of the OSI model"
+    },
+    {
+      "word": "CSMA",
+      "description": "In telecommunications, Carrier-Sense Multiple Access (CSMA) is a medium access control protocol in which a node verifies the absence of traffic before transmitting on a shared medium such as an electronic channel or an electromagnetic spectrum band."
+    }
+  ]
+  

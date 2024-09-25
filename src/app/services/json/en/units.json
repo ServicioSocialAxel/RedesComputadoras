@@ -222,99 +222,101 @@
             "Send Plots",
             "Routines"
           ],
-          "unidad": "<section class='contenido'> <section> <p class='descripcion'> A continuación, se describirá el uso de rutinas basadas en las bibliotecas PCAP4J (lenguaje JAVA) y NPCAP (lenguaje C) para acceder al controlador de la tarjeta de red y poder realizar captura de tramas de datos. Para poder hacer uso de estas bibliotecas se sugiere lo siguiente: </p> <strong>PCAP4J</strong> <br /><br /> <ul> <li> Para usar la biblioteca PCAP4J se aconseja el uso del Ambiente de Desarrollo Integrado (IDE) Netbeans, el cual puede ser descargado desde la siguiente liga: <a href='https://netbeans.apache.org/'>Netbeans IDE</a> </li> <li> También se aconseja usar el gestor de dependencias Maven para trabajar los proyectos de Netbeans. </li> <li> También se aconseja descargar e instalar el paquete NPCAP, miso que puede ser descargado desde la siguiente liga: <a href='https://npcap.com/'>paquete NPCAP</a> y realizar el proceso de instalación del mismo, sin olvidar que durante el proceso de instalación se deberá seleccionar el recuadro “Modo compatibilidad con Winpcap” cuando éste sea visible en pantalla. </li> <li> Se recomienda tener instalada una versión de JDK en la computadora; de no tenerla, se puede descargar desde aquí: <a href='https://www.oracle.com/java/'>java JDK</a> </li> <li> Ya instalado el JDK y Netbeans, se procede con la configuración de la biblioteca PCAP4J de acuerdo con el siguiente documento: <a href='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/pcap4J_configuraci%f3n.pdf' >configuracion</a > </li> </ul> <br /> <strong>NPCAP</strong> <br /> <br /> <ul> <li> Para usar la biblioteca NPCAP se aconseja primero descargar el instalador desde la siguiente liga: <a href='https://npcap.com/'>https://npcap.com/</a> y realizar el proceso de instalación del mismo, sin olvidar que durante el proceso de instalación se deberá seleccionar el recuadro “Modo compatibilidad con Winpcap” cuando éste sea visible en pantalla. </li> <li> Una vez instalada la biblioteca NPCAP se requiere instalar el compilador DEVC++, mismo que puede ser descargado desde la siguiente liga: <a href='http://148.204.58.221/axel/redesnp/sniffer/NPCAP/Dev-Cpp%205.11%20TDM-GCC%204.9.2%20Setup.exe' >Compilador DevC++</a > </li> <li>Posteriormente seguir las instrucciones para su instalación.</li> </ul> </section> <br /><br /> <section> <p><strong>3.2.1 Rutinas para leer tramas al vuelo</strong></p> <br /> <strong>Desde PCAP4J</strong> <br /><br /> <ul> <li> <p> Primero se debe elegir la interfaz de red que se usará para realizar la captura de tramas. Para ello hacemos uso del método estático org.pcap4j.util.NifSelector.NifSelector(), que a su vez nos permite hacer uso del método selectNetworkInterface( ) tal como se puede ver a continuación para permitir al usuario elegir la interfaz de red a ser utilizada: </p> <pre> <code> &NewLine;PcapNetworkInterface nif; &NewLine;try { &NewLine;&Tab;nif = new NifSelector( ).selectNetworkInterface(); &NewLine;} catch (IOException e) { &NewLine;&Tab;e.printStackTrace( ); &NewLine;&Tab;return; &NewLine;}//catch </code> </pre> </li> <li> <p> Después, debemos configurar el descriptor de la interfaz de red para poder abrirlo en modo promiscuo y así poder capturar todas las tramas que pasen por el medio de transmisión y no solo las dirigidas hacia su dirección MAC. Para la configuración del descriptor es necesario especificar los parámetros: nombre de la NIC, tamaño de trama a ser capturada (SNAPLEN), modo de operación(PROMISCUO), tiempo de lectura por trama (en milisegundos), tamaño de buffer para almacenar los datos de la trama (en bytes). Una vez especificados los parámetros de apertura, se procede a abrir el descriptor con el método build( ). </p> <pre> <code> &NewLine;PcapHandle handle = new PcapHandle.Builder(nif.getName()) &NewLine;&Tab;.snaplen(SNAPLEN) &NewLine;&Tab;.promiscuousMode(PromiscuousMode.PROMISCUOUS) &NewLine;&Tab;.timeoutMillis(READ_TIMEOUT) &NewLine;&Tab;.bufferSize(BUFFER_SIZE) &NewLine;&Tab;.build(); </code> </pre> </li> <li> <p> Posteriormente se crea un filtro de captura (de ser necesario) para especificar el tipo de tramas a ser capturadas, de otro modo se hará una captura por fuerza bruta. El formato del filtro de captura utiliza la misma sintaxis que la aplicación <strong>tcpdump</strong>: </p> <pre> <code> handle.setFilter(filter, BpfCompileMode.OPTIMIZE); </code> </pre> </li> <li> <p> Después se procede a la captura de las tramas, para ello podemos hacer uso del método getNextRawPacket( ) de la instancia handle: </p> <pre> <code> &NewLine;while (true) { &NewLine;&Tab;byte[ ] packet = handle.getNextRawPacket(); </code> </pre> <p> la cual nos devolverá un arreglo de bytes con el contenido de la trama para así poder iniciar con su análisis. En caso de desear capturar múltiples tramas, lo ciclamos en una estructura de iteración (for, o while). </p> </li> <li> <p> Podemos acceder a cada byte de la trama para su posterior análisis: </p> <pre> <code> &NewLine;for(int j=0; j < packet.length; j++ ){ &NewLine;&Tab;System.out.printf(&quot;%02X &quot;,packet[j]); &NewLine;&Tab;if(j % 16 == 0 ) &NewLine;&Tab;System.out.println(&quot;&quot;); &NewLine;}//for </code> </pre> </li> <li> <p> Para ver un ejemplo completo, da click en el siguiente enlace: <a href='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/GetNextRawPacket.java' > GetNextRawPacket.java </a> </p> </li> </ul> <br /> <strong>Desde NPCAP</strong> <br /><br /> <ul> <li> <p> Primero se debe elegir la interfaz de red que se usará para realizar la captura de tramas. Para ello hacemos uso de dos apuntadores de tipo pcap_if_t, uno de ellos apuntará al inicio de una lista de las interfaces de red encontradas en la máquina, el otro será usado para recorrer cada una de las interfaces de la lista: </p> <pre> <code> pcap_if_t *alldevs; &NewLine;pcap_if_t *d; &NewLine;char errbuf[PCAP_ERRBUF_SIZE]; </code> </pre> </li> <li> <p> Posteriormente invocamos a la función pcap_findalldevs(&alldevs,errbuf) para generar el listado de interfaces de red encontradas, mismas que serán referidas por el apuntador alldevs. El segundo parámetro de la función es solo un buffer para que en caso de generarse un error de entrada/salida sea almacenado en él: </p> <pre> <code> if(pcap_findalldevs(&alldevs, errbuf) == -1) { &NewLine;&Tab;fprintf(stderr,&quot;Error in pcap_findalldevs: %s&quot;, errbuf); &NewLine;&Tab;exit(1); &NewLine;} </code> </pre> </li> <li> <p> Una vez que la lista de tarjetas de red está cargada con la información obtenida por la función pcap_findalldevs( ), recorremos la lista y la desplegamos para que el usuario elija la tarjeta desde la cual se hará la captura de tramas: </p> <pre> <code> &NewLine;for(d=alldevs; d; d=d->next) { &NewLine;&Tab;printf(&quot;%d. %s&quot;, ++i, d->name); &NewLine;&Tab;if (d->description) &NewLine;&Tab;&Tab;printf(&quot;(%s)&quot;, d->description); &NewLine;&Tab;else &NewLine;&Tab;&Tab;printf(&quot;(No hay descripción disponible)&quot;); &NewLine;} &NewLine;if(i==0){ &NewLine;&Tab;printf(&quot;No se encontraron interfaces de red! Asegúrate que NPCAP está instalado.&quot;); &NewLine;&Tab;return -1; &NewLine;} &NewLine;printf(&quot;Elige el número de interfaz de captura (1-%d):&quot;,i); &NewLine;scanf(&quot;%d&quot;, &inum); </code> </pre> </li> <li> <p> Recorremos la lista hasta el índice de interfaz elegido por el usuario </p> <pre> <code> for(d=alldevs, i=0; i < inum-1; d=d->next, i++); </code> </pre> </li> <li> <p> Y abrimos el descriptor de la interfaz de red mediante la función pcap_open_live(), en los argumentos de esta función debemos especificar: el nombre del dispositivo, la porción del paquete a ser capturado, modo de apertura (promiscuo para escuchar todos los paquetes que pasen por el medio de transmisión), tiempo de lectura del paquete, buffer de error (en caso de haber un error de entrada/salida). </p> <pre> <code> &NewLine;//<strong>d->name</strong>: nombre del dispositivo &NewLine;//<strong>65536</strong>: porción del paquete a ser capturado 65536 permite que el paquete completo sea capturado para distintos tipos de  MACs. &NewLine;//<strong>1</strong>: modo promiscuo distinto de 0 significa promiscuo) &NewLine;//<strong>1000</strong>: tiempo máximo de lectura de trama &NewLine;//<strong>errbuf</strong>: buffer de error (en caso de haber) &NewLine;if ((adhandle= pcap_open_live(d->name, 65536, 1, 1000, errbuf)) == NULL) { &NewLine;&Tab;fprintf(stderr,&quot;No es posible abrir el adaptador. %s no es soportado por NPcap&quot;, d->name); &NewLine;&Tab;/* limpiamos la lista de dispositivos */ &NewLine;&Tab;pcap_freealldevs(alldevs); &NewLine;&Tab;return -1; &NewLine;} </code> </pre> </li> <li> <p> Posteriormente iniciamos el proceso de captura de tramas mediante la función pcap_loop(), donde el primer argumento de la función identifica el descriptor del adaptador de red a ser usado, el segundo parámetro indica el número de tramas a ser capturaras (0 significa ciclo infinito de captura), el tercer argumento indica la función que será invocada para procesar la trama capturada y el cuarto argumento en caso de haber, indica un nombre de archivo usado para guardar la trama capturada. </p> <pre> <code> pcap_loop(adhandle, 15, packet_handler, (unsigned char *)dumpfile); </code> </pre> </li> <li> <p> El análisis del contenido de cada trama, tal como se vio en el punto anterior se hará dentro del cuerpo de la función especificada en el segundo argumento de la función pcap_loop. Esto es, en la función packet_handler, cuya sintaxis es la siguiente: </p> <pre> <code> void packet_handler(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data) </code> </pre> <p> cuyo primer argumento especifica el nombre del archivo donde se guardará la trama capturada (en caso de desear almacenar la trama capturada en un archivo), el segundo argumento contendrá el encabezado de la trama y el tercer argumento contendrá la trama en crudo, lista para ser analizada. Por ejemplo, si deseáramos imprimir de cada trama capturada su dirección MAC destino, dirección MAC origen y tipo de trama haríamos lo siguiente en el cuerpo de la función Packet_handler: </p> <pre> <code> &NewLine;void packet_handler(u_char * dumpfile, &NewLine;const struct pcap_pkthdr * header, &NewLine;const u_char * pkt_data){ &NewLine;&Tab;int j = 0, k = 0; &NewLine;&Tab;printf(&quot&quot;MAC destino:&quot&quot;); &NewLine;&Tab;for (j = 0; j < 6; j++) { &NewLine;&Tab;&Tab;printf(&quot&quot;%02X:&quot&quot;, pkt_data[j]); &NewLine;&Tab;} &NewLine;&Tab;printf(&quot&quot; MAC origen:&quot&quot;); &NewLine;&Tab;for (k = 6; k < 12; k++) { &NewLine;&Tab;&Tab;printf(&quot&quot;%02X: &quot&quot;, pkt_data[k]); &NewLine;&Tab;} &NewLine;&Tab;printf(&quot; &quot;); &NewLine;&Tab;unsigned short tipo = (pkt_data[12] * 256) + pkt_data[13]; &NewLine;&Tab;printf(&quot;Tipo: %d   %02X %02X &quot;, tipo, pkt_data[12], pkt_data[13]); &NewLine;} </code> </pre> </li> <li> <p> Para ver un ejemplo completo, da click en el siguiente enlace: <a href='http://148.204.58.221/axel/redesnp/sniffer/NPCAP/captura.c' >capturas.c</a > </p> </li> </ul> </section> <br /> <section> <h4>3.2.2 Rutinas para leer tramas desde un archivo</h4> <strong>Desde PCAP4J</strong> <br /><br /> <ul> <li> <p> Primero especificamos el tipo de archivo que será leído (.pcap), para ello ponemos la siguiente instrucción: </p> <pre> <code> private static final String PCAP_FILE_KEY = ReadPacketFile.class.getName() + &quot;.pcapFile&quot;; </code> </pre> </li> <li> <p> Después especificamos el nombre del archivo que será abierto para lectura (&quot;paquetes3.pcap&quot;), tal como se muestra a continuación: </p> <pre> <code> &NewLine;private static final String PCAP_FILE = &NewLine;System.getProperty(PCAP_FILE_KEY, &quot;paquetes3.pcap&quot;); </code> </pre> </li> <li> <p> A continuación, intentamos abrir el archivo mediante el método openOffline(), especificando el nombre del archivo, así como las unidades de medición de tiempo para la lectura del las tramas. Debemos considerar que quizá al intentar abrir el archivo podrían presentarse excepciones de Entrada/Salida </p> <pre> <code> &NewLine;try { &NewLine;&Tab;handle = Pcaps.openOffline(PCAP_FILE, TimestampPrecision.NANO); &NewLine;} catch (PcapNativeException e) { &NewLine;&Tab;handle = Pcaps.openOffline(PCAP_FILE); &NewLine;} </code> </pre> </li> <li> <p> Una vez abierto el archivo, comenzamos el procesamiento manual de cada trama contenida en él (en este ejemplo se intentarán leer hasta 32 tramas): </p> <pre> <code> &NewLine;for (int i = 0; i < 32; i++) { &NewLine;try { &NewLine;&Tab;byte[] packet = handle.getNextRawPacket(); &NewLine;&Tab;for(int j=0; j < packet.length; j++){ &NewLine;&Tab;&Tab;if(j%16==0) &NewLine;&Tab;&Tab;&Tab;System.out.println(&quot;&quot;); &NewLine;&Tab;&Tab;System.out.printf(&quot;%02X &quot;,packet[j]); &NewLine;&Tab;}//for &NewLine;&Tab;System.out.println(&quot;&quot;); &NewLine;}catch(Exception e){ &NewLine;&Tab;e.printStackTrace(); &NewLine;} </code> </pre> </li> <li> <p>Una vez procesadas las tramas procedemos a cerrar el archivo</p> <pre> <code> handle.close(); </code> </pre> </li> <li> <p> Para ver un ejemplo completo, da click en el siguiente enlace: <a href='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/ReadPacketFile.java' >ReadPacketFile.java</a > </p> </li> </ul> <br /> <strong>Desde NPCAP</strong> <br /> <br /> <ul> <li> <p> Comenzamos por definir el nombre canónico del archivo que será leído y que contiene las tramas a ser analizadas desde NPCAP, en este ejemplo se llama &quot;paquetes3.pcap&quot;. </p> <pre> <code> &NewLine;#define RUTA &quot;D:\\Documentos\\Redespcap\\paquetes3.pcap&quot; </code> </pre> </li> <li> <p> Después debemos configurar la forma en que se intentará abrir el archivo, ya que NPCAP permite la apertura y procesamiento de archivos locales o remotos, para ello se usa la función pcap_createsrcstr( ), el primer argumento de esta función guardará la cadena con el nombre del archivo a ser abierto, el segundo argumento permite especificar el tipo de fuente de donde se hará la lectura de tramas (en este caso un archivo). El tercer argumento permitiría indicar el la dirección del host (en caso de que el análisis sea de manera remota, para este ejemplo es NULL porque el análisis es local), el cuarto argumento permite especificar el puerto remoto (en caso de que el análisis sea de manera remota, para este ejemplo es NULL porque el análisis es local), el quinto argumento permite definir la ruta (nombre canónico del archivo a ser abierto) y el último argumento permite definir un buffer donde se guardará el mensaje de error en caso de que exista al momento de intentar leer el recurso a ser leído. </p> <pre> <code> &NewLine;//<strong>source</strong>>: variable que guardará la ruta del archivo &NewLine;//<strong>PCAP_SRC_FILE</strong>>: deseamos abrir un archivo &NewLine;//<strong>NULL</strong>>:  host remoto &NewLine;//<strong>NULL</strong>>: puerto en el host remoto &NewLine;//<strong>RUTA</strong>>: nombre del archivo que deseamos abrir &NewLine;//<strong>errbuf</strong>>: buffer para guardar mensajes de error (de haber) &NewLine;if ( pcap_createsrcstr( source, PCAP_SRC_FILE, NULL, NULL, RUTA, errbuf ) != 0) { &NewLine;&Tab;fprintf(stderr,&quot;Error al crear la cadena del origen de datos&quot;); &NewLine;&Tab;return -1; &NewLine;} </code> </pre> </li> <li> <p> A continuación, intentaremos abrir el archivo para su lectura, para ello usaremos la función pcap_open( ), en los argumentos de esta función debemos especificar: el nombre del dispositivo, la porción del paquete a ser capturado, modo de apertura (promiscuo para escuchar todos los paquetes que pasen por el medio de transmisión), tiempo de lectura del paquete, si se hará alguna autenticación de usuario (solo para análisis remoto), buffer de error (en caso de haber un error de entrada/salida). Obtendremos como resultado un descriptor de tipo <strong>pcap_t</strong> </p> <pre> <code> &NewLine;//<strong>source</strong> nombre del dispositivo &NewLine;//<strong>65536</strong> porción del paquete a ser capturado 65536 permite que el paquete completo sea capturado para distintos tipos de  MACs. &NewLine;//<strong>PCAP_OPENFLAG_PROMISCUOUS</strong> modo promiscuo distinto de 0 significa promiscuo) &NewLine;//<strong>1000</strong> tiempo máximo de lectura de trama &NewLine;//<strong>NULL</strong> autenticación en el host remoto &NewLine;//<strong>errbuf</strong> buffer de error (en caso de haber) &NewLine;pcap_t *fp; &NewLine; if (( fp= (pcap_t * ) pcap_open( source, 65536, PCAP_OPENFLAG_PROMISCUOUS, 1000, NULL, errbuf )) == NULL) { &NewLine;&Tab;fprintf(stderr,&quot;Unable to open the file %s&quot;, source); &NewLine;&Tab;return -1; &NewLine;} </code> </pre> </li> <li> <p> Ya abierto el archivo para su lectura, procedemos a leer las tramas, para ello usaremos la función pcap_loop ( ), donde el primer argumento de la función identifica el descriptor del dispositivo de lectura a ser usado, el segundo parámetro indica el número de tramas a ser capturaras (0 significa ciclo infinito de captura), el tercer argumento indica la función que será invocada para procesar la trama capturada y el cuarto argumento en caso de haber, indica un nombre de archivo usado para guardar la trama capturada. </p> <pre> <code> pcap_loop(fp, 0, dispatcher_handler, NULL); </code> </pre> </li> <li> <p> Después procedemos a dar cuerpo a la función dispatcher_handler que se encargará de procesar el contenido de cada trama leída </p> <pre> <code> void dispatcher_handler(u_char *temp1, &NewLine;const struct pcap_pkthdr *header, const u_char *pkt_data) </code> </pre> <p> El primer argumento de la función específica el nombre del archivo donde se guardará la trama capturada (en este caso ya se cuenta con un archivo, por lo que no se usará ese argumento), el segundo argumento contendrá el encabezado de la trama y el tercer argumento contendrá la trama en crudo, lista para ser analizada. Por ejemplo, si deseáramos imprimir de cada trama capturada su dirección MAC destino, dirección MAC origen y tipo de trama haríamos lo siguiente en el cuerpo de la función dispatcher_handler </p> <pre> <code> &NewLine;{ &NewLine;int j=0,k=0; &NewLine;printf(&quot;MAC destino:&quot;); &NewLine;for(j=0; j < 6; j++){ &NewLine;&Tab;printf(&quot;%02X:&quot;,pkt_data[j]); &NewLine;} &NewLine;printf(&quot; MAC origen:&quot;); &NewLine;for(k=6; k < 12; k++){ &NewLine;&Tab;printf(&quot;%02X: &quot;,pkt_data[k]); &NewLine;} &NewLine;printf(&quot; &quot;); &NewLine;unsigned short tipo = (pkt_data[12]*256)+pkt_data[13]; &NewLine;printf(&quot;Tipo: %d %02X %02X &quot;,tipo,pkt_data[12],pkt_data[13]); &NewLine;} </code> </pre> </li> <li> <p> Para ver un ejemplo completo, da click en el siguiente enlace: <a href='http://148.204.58.221/axel/redesnp/LLC/LLC.c'>LLC.C</a> </p> </li> </ul> </section> </section>",
+          "unidad": "<section class='content'> <section> <p class='description'> Next, we will describe the use of routines based on the PCAP4J libraries (JAVA language) and NPCAP (C language) to access the network card driver and be able to capture data frames. In order to use these libraries, the following is suggested: </p> <strong>PCAP4J</strong> <br /><br /> <ul> <li> To use the PCAP4J library, it is recommended to use the Netbeans Integrated Development Environment (IDE), which can be downloaded from the following link: <a href='https://netbeans.apache.org/'>Netbeans IDE</a> </li> <li> It is also recommended to use the Maven dependency manager to work on Netbeans projects. </li> <li> It is also recommended to download and install the NPCAP package, which can be downloaded from the following link: <a href='https://npcap.com/'>NPCAP package</a> and perform the installation process, remembering that during the installation process you must select the “Winpcap compatibility mode” box when it is visible on the screen. </li> <li> It is recommended to have a version of JDK installed on the computer; If you do not have it, you can download it from here: <a href='https://www.oracle.com/java/'>java JDK</a> </li> <li> Once the JDK and Netbeans are installed, proceed with the configuration of the PCAP4J library according to the following document: <a href='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/pcap4J_configuraci%f3n.pdf' >configuration</a> </li> </ul> <br /> <strong>NPCAP</strong> <br /> <br /> <ul> <li> To use the NPCAP library, it is recommended to first download the installer from the following link: <a href='https://npcap.com/'>https://npcap.com/</a> and perform the installation process, not forgetting that during the installation process you must select the “Winpcap compatibility mode” box when it is visible on the screen. </li> <li> Once the NPCAP library is installed, it is necessary to install the DEVC++ compiler, which can be downloaded from the following link: <a href='http://148.204.58.221/axel/redesnp/sniffer/NPCAP/Dev-Cpp%205.11%20TDM-GCC%204.9.2%20Setup.exe' >DevC++ Compiler</a > </li> <li>Then follow the instructions for installation.</li> </ul> </section> <br /><br /> <section> <p><strong>3.2.1 Routines to read frames on the fly</strong></p> <br /> <strong>From PCAP4J</strong> <br /><br /> <ul> <li> <p> First, you must choose the network interface that will be used to capture frames. To do this we use the static method org.pcap4j.util.NifSelector.NifSelector(), which in turn allows us to use the selectNetworkInterface( ) method as can be seen below to allow the user to choose the network interface to be used: </p> <pre> <code> &NewLine; PcapNetworkInterface nif; &NewLine;try { &NewLine;&Tab;nif = new NifSelector( ).selectNetworkInterface(); &NewLine;} catch (IOException e) { &NewLine;&Tab;e.printStackTrace( ); &NewLine;&Tab;return; &NewLine;}//catch </code> </pre> </li> <li> <p> Next, we must configure the network interface descriptor to open it in promiscuous mode and thus be able to capture all frames that pass through the transmission medium and not just those directed to its MAC address. To configure the descriptor, it is necessary to specify the following parameters: NIC name, frame size to be captured (SNAPLEN), operation mode (PROMISCUO), read time per frame (in milliseconds), buffer size to store the frame data (in bytes). Once the opening parameters have been specified, the descriptor is opened with the build( ) method. </p> <pre> <code> &NewLine;PcapHandle handle = new PcapHandle.Builder(nif.getName()) &NewLine;&Tab;.snaplen(SNAPLEN) &NewLine;&Tab;.promiscuousMode(PromiscuousMode.PROMISCUOUS) &NewLine;&Tab;.timeoutMillis(READ_TIMEOUT) &NewLine;&Tab;.bufferSize(BUFFER_SIZE) &NewLine;&Tab;.build(); </code> </pre> </li> <li> <p> A capture filter is then created (if necessary) to specify the type of frames to be captured, otherwise a brute force capture will be performed. The capture filter format uses the same syntax as the <strong>tcpdump</strong> application: </p> <pre> <code> handle.setFilter(filter, BpfCompileMode.OPTIMIZE); </code> </pre> </li> <li> <p> Then, we proceed to capture the frames. To do this, we can use the getNextRawPacket( ) method of the handle instance: </p> <pre> <code> &NewLine;while (true) { &NewLine;&Tab;byte[ ] packet = handle.getNextRawPacket(); </code> </pre> <p> which will return a byte array with the contents of the frame so that we can begin analyzing it. If you want to capture multiple frames, we cycle it in an iteration structure (for or while). </p> </li> <li> <p> We can access each byte of the frame for further analysis: </p> <pre> <code> &NewLine;for(int j=0; j < packet.length; j++ ){ &NewLine;&Tab;System.out.printf(&quot;%02X &quot;,packet[j]); &NewLine;&Tab;if(j % ​​16 == 0 ) &NewLine;&Tab;System.out.println(&quot;&quot;); &NewLine;}//for </code> </pre> </li> <li> <p> To see a complete example, click on the following link: <a href='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/GetNextRawPacket.java' > GetNextRawPacket.java </a> </p> </li> </ul> <br /> <strong>From NPCAP</strong> <br /><br /> <ul> <li> <p> First, you must choose the network interface that will be used to capture frames. To do this, we use two pcap_if_t type pointers, one of them will point to the beginning of a list of network interfaces found on the machine, the other will be used to go through each of the interfaces in the list: </p> <pre> <code> pcap_if_t *alldevs; &NewLine;pcap_if_t *d; &NewLine;char errbuf[PCAP_ERRBUF_SIZE]; </code> </pre> </li> <li> <p> We then call the pcap_findalldevs(&alldevs,errbuf) function to generate the list of network interfaces found, which will be referred to by the alldevs pointer. The second parameter of the function is just a buffer so that in case an input/output error is generated it is stored in it: </p> <pre> <code> if(pcap_findalldevs(&alldevs, errbuf) == -1) { &NewLine;&Tab;fprintf(stderr,&quot;Error in pcap_findalldevs: %s&quot;, errbuf); &NewLine;&Tab;exit(1); &NewLine;} </code> </pre> </li> <li> <p> Once the list of network cards is loaded with the information obtained by the pcap_findalldevs( ) function, we go through the list and display it so that the user can choose the card from which the frame capture will be made: </p> <pre> <code> &NewLine;for(d=alldevs; d; d=d->next) { &NewLine;&Tab;printf(&quot;%d. %s&quot;, ++i, d->name); &NewLine;&Tab;if (d->description) &NewLine;&Tab;&Tab;printf(&quot;(%s)&quot;, d->description); &NewLine;&Tab;else &NewLine;&Tab;&Tab;printf(&quot;(No description available)&quot;); &NewLine;} &NewLine;if(i==0){ &NewLine;&Tab;printf(&quot;No network interfaces found! Make sure NPCAP is installed.&quot;); &NewLine;&Tab;return -1; &NewLine;} &NewLine;printf(&quot;Choose the interface number to scan (1-%d):&quot;,i); &NewLine;scanf(&quot;%d&quot;, &inum); </code> </pre> </li> <li> <p> Scan through the list to the interface index chosen by the user </p> <pre> <code> for(d=alldevs, i=0; i < inum-1; d=d->next, i++); </code> </pre> </li> <li> <p> And we open the network interface descriptor using the pcap_open_live() function, in the arguments of this function we must specify: the name of the device, the portion of the packet to be captured, open mode (promiscuous to listen to all packets passing through the transmission medium), packet reading time, error buffer (in case of an input/output error). </p> <pre> <code> &NewLine;//<strong>d->name</strong>: name of the device &NewLine;//<strong>65536</strong>: portion of the packet to be captured 65536 allows the complete packet to be captured for different types of MACs. &NewLine;//<strong>1</strong>: promiscuous mode other than 0 means promiscuous) &NewLine;//<strong>1000</strong>: maximum frame reading time &NewLine;//<strong>errbuf</strong>: error buffer (if any) &NewLine;if ((adhandle= pcap_open_live(d->name, 65536, 1, 1000, errbuf)) == NULL) { &NewLine;&Tab;fprintf(stderr,&quot;Cannot open adapter. %s is not supported by NPcap&quot;, d->name); &NewLine;&Tab;/* clear the device list */ &NewLine;&Tab;pcap_freealldevs(alldevs); &NewLine;&Tab;return -1; &NewLine;} </code> </pre> </li> <li> <p> We then start the frame capture process using the pcap_loop() function, where the first argument to the function identifies the descriptor of the network adapter to be used, the second parameter indicates the number of frames to be captured (0 means infinite capture cycle), the third argument indicates the function that will be invoked to process the captured frame, and the fourth argument, if any, indicates a file name used to save the captured frame. </p> <pre> <code> pcap_loop(adhandle, 15, packet_handler, (unsigned char *)dumpfile); </code> </pre> </li> <li> <p> The analysis of the content of each frame, as seen in the previous point, will be done within the body of the function specified in the second argument of the pcap_loop function. That is, in the packet_handler function, whose syntax is as follows: </p> <pre> <code> void packet_handler(u_char *param, const struct pcap_pkthdr *header, const u_char *pkt_data) </code> </pre> <p> whose first argument specifies the name of the file where the captured frame will be saved (in case you want to store the captured frame in a file), the second argument will contain the frame header and the third argument will contain the raw frame, ready to be analyzed. For example, if we wanted to print the destination MAC address, source MAC address, and frame type of each captured frame, we would do the following in the body of the Packet_handler function: </p> <pre> <code> &NewLine;void packet_handler(u_char * dumpfile, &NewLine;const struct pcap_pkthdr * header, &NewLine;const u_char * pkt_data){ &NewLine;&Tab;int j = 0, k = 0; &NewLine;&Tab;printf(&quot&quot;Destination MAC:&quot&quot;); &NewLine;&Tab;for (j = 0; j < 6; j++) { &NewLine;&Tab;&Tab;printf(&quot&quot;%02X:&quot&quot;, pkt_data[j]); &NewLine;&Tab;} &NewLine;&Tab;printf(&quot&quot;Source MAC:&quot&quot;); &NewLine;&Tab;for (k = 6; k < 12; k++) { &NewLine;&Tab;&Tab;printf(&quot;%02X: &quot;, pkt_data[k]); &NewLine;&Tab;} &NewLine;&Tab;printf(&quot; &quot;); &NewLine;&Tab;unsigned short type = (pkt_data[12] * 256) + pkt_data[13]; &NewLine;&Tab;printf(&quot;Type: %d %02X %02X &quot;, type, pkt_data[12], pkt_data[13]); &NewLine;} </code> </pre> </li> <li> <p> To see a complete example, click on the following link: <a href='http://148.204.58.221/axel/redesnp/sniffer/NPCAP/captura.c' >capturas.c</a > </p> </li> </ul> </section> <br /> <section> <h4>3.2.2 Routines for reading frames from a file</h4> <strong>From PCAP4J</strong> <br /><br /> <ul> <li> <p> First, we specify the type of file to be read (.pcap), for this we put the following instruction: </p> <pre> <code> private static final String PCAP_FILE_KEY = ReadPacketFile.class.getName() + &quot;.pcapFile&quot;; </code> </pre> </li> <li> <p> Then, we specify the name of the file that will be opened for reading (&quot;paquetes3.pcap&quot;), as shown below: </p> <pre> <code> &NewLine;private static final String PCAP_FILE = &NewLine;System.getProperty(PCAP_FILE_KEY, &quot;paquetes3.pcap&quot;); </code> </pre> </li> <li> <p> Next, we try to open the file using the openOffline() method, specifying the file name and the time measurement units for reading the frames. We must consider that perhaps when trying to open the file, Input/Output exceptions could occur. </p> <pre> <code> &NewLine;try { &NewLine;&Tab;handle = Pcaps.openOffline(PCAP_FILE, TimestampPrecision.NANO); &NewLine;} catch (PcapNativeException e) { &NewLine;&Tab;handle = Pcaps.openOffline(PCAP_FILE); &NewLine;} </code> </pre> </li> <li> <p> Once the file is opened, we begin the manual processing of each frame contained in it (in this example we will try to read up to 32 frames): </p> <pre> <code> &NewLine;for (int i = 0; i < 32; i++) { &NewLine;try { &NewLine;&Tab;byte[] packet = handle.getNextRawPacket(); &NewLine;&Tab;for(int j=0; j < packet.length; j++){ &NewLine;&Tab;&Tab;if(j%16==0) &NewLine;&Tab;&Tab;&Tab;System.out.println(&quot;&quot;); &NewLine;&Tab;&Tab;System.out.printf(&quot;%02X &quot;,packet[j]); &NewLine;&Tab;}//for &NewLine;&Tab;System.out.println(&quot;&quot;); &NewLine;}catch(Exception e){ &NewLine;&Tab;e.printStackTrace(); &NewLine;} </code> </pre> </li> <li> <p>Once the frames have been processed we proceed to close the file</p> <pre> <code> handle.close(); </code> </pre> </li> <li> <p> To see a complete example, click on the following link: <a href='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/ReadPacketFile.java' >ReadPacketFile.java</a > </p> </li> </ul> <br /> <strong>From NPCAP</strong> <br /> <br /> <ul> <li> <p> We start by defining the canonical name of the file that will be read and that contains the frames to be analyzed from NPCAP, in this example it is called &quot;paquetes3.pcap&quot;. </p> <pre> <code> &NewLine;#define PATH &quot;D:\\Documents\\Redespcap\\paquetes3.pcap&quot; </code> </pre> </li> <li> <p> Next we need to configure the way in which the file will be attempted to be opened, since NPCAP allows the opening and processing of local or remote files, for this the function pcap_createsrcstr( ) is used, the first argument of this function will save the string with the name of the file to be opened, the second argument allows to specify the type of source from which the reading of frames will be done (in this case a file). The third argument would allow to indicate the address of the host (in case the analysis is remote, for this example it is NULL because the analysis is local), the fourth argument allows to specify the remote port (in case the analysis is remote, for this example it is NULL because the analysis is local), the fifth argument allows to define the path (canonical name of the file to be opened) and the last argument allows to define a buffer where the error message will be saved in case it exists at the time of trying to read the resource to be read. </p> <pre> <code> &NewLine;//<strong>source</strong>>: variable that will save the path of the file &NewLine;//<strong>PCAP_SRC_FILE</strong>>: we want to open a file &NewLine;//<strong>NULL</strong>>: remote host &NewLine;//<strong>NULL</strong>>: port on the remote host &NewLine;//<strong>PATH</strong>>: name of the file we want to open &NewLine;//<strong>errbuf</strong>>: buffer to save error messages (if any) &NewLine;if ( pcap_createsrcstr( source, PCAP_SRC_FILE, NULL, NULL, PATH, errbuf ) != 0) { &NewLine;&Tab;fprintf(stderr,&quot;Error creating data source string&quot;); &NewLine;&Tab;return -1; &NewLine;} </code> </pre> </li> <li> <p> Next, we will try to open the file for reading, for this we will use the pcap_open( ) function, in the arguments of this function we must specify: the name of the device, the portion of the packet to be captured, opening mode (promiscuous to listen to all packets that pass through the transmission medium), packet reading time, whether any user authentication will be done (only for remote analysis), error buffer (in case of an input/output error). As a result, we will obtain a descriptor of type <strong>pcap_t</strong> </p> <pre> <code> &NewLine;//<strong>source</strong> name of the device &NewLine;//<strong>65536</strong> portion of the packet to be captured 65536 allows the complete packet to be captured for different types of MACs. &NewLine;//<strong>PCAP_OPENFLAG_PROMISCUOUS</strong> promiscuous mode other than 0 means promiscuous) &NewLine;//<strong>1000</strong> maximum frame read time &NewLine;//<strong>NULL</strong> authentication on remote host &NewLine;//<strong>errbuf</strong> error buffer (if any) &NewLine;pcap_t *fp; &NewLine; if (( fp= (pcap_t * ) pcap_open( source, 65536, PCAP_OPENFLAG_PROMISCUOUS, 1000, NULL, errbuf )) == NULL) { &NewLine;&Tab;fprintf(stderr,&quot;Unable to open the file %s&quot;, source); &NewLine;&Tab;return -1; &NewLine;} </code> </pre> </li> <li> <p> Once the file is open for reading, we proceed to read the frames. To do this we will use the pcap_loop ( ) function, where the first argument of the function identifies the descriptor of the reading device to be used, the second parameter indicates the number of frames to be captured (0 means infinite capture cycle), the third argument indicates the function that will be invoked to process the captured frame, and the fourth argument, if there is one, indicates a file name used to save the captured frame. </p> <pre> <code> pcap_loop(fp, 0, dispatcher_handler, NULL); </code> </pre> </li> <li> <p> Next, we proceed to create the dispatcher_handler function that will process the content of each frame read </p> <pre> <code> void dispatcher_handler(u_char *temp1, &NewLine;const struct pcap_pkthdr *header, const u_char *pkt_data) </code> </pre> <p> The first argument to the function specifies the name of the file where the captured frame will be saved (in this case, there is already a file, so this argument will not be used), the second argument will contain the frame header, and the third argument will contain the raw frame, ready to be analyzed. For example, if we wanted to print the destination MAC address, source MAC address, and frame type of each captured frame, we would do the following in the body of the dispatcher_handler function </p> <pre> <code> &NewLine;{ &NewLine;int j=0,k=0; &NewLine;printf(&quot;MAC destination:&quot;); &NewLine;for(j=0; j < 6; j++){ &NewLine;&Tab;printf(&quot;%02X:&quot;,pkt_data[j]); &NewLine;} &NewLine;printf(&quot; MAC source:&quot;); &NewLine;for(k=6; k < 12; k++){ &NewLine;&Tab;printf(&quot;%02X: &quot;,pkt_data[k]); &NewLine;} &NewLine;printf(&quot; &quot;); &NewLine;unsigned short type = (pkt_data[12]*256)+pkt_data[13]; &NewLine;printf(&quot;Type: %d %02X %02X &quot;,type,pkt_data[12],pkt_data[13]); &NewLine;} </code> </pre> </li> <li> <p> To see a complete example, click on the following link: <a href='http://148.204.58.221/axel/redesnp/LLC/LLC.c'>LLC.C</a> </p> </li> </ul> </section> </section>",
           "recurso": ""
         },
         {
           "seccion": 3.3,
-          "titulo": "Estándar IEEE 802.3",
+          "titulo": "IEEE 802.3 standard",
           "descripcionRecurso": "",
           "keywords": [
             "HDLC",
-            "Encabezados",
-            "Análisis de Trama"
+            "Headers",
+            "Frame Analysis"
           ],
           "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/HDLC_LLC.pdf' type='application/pdf'></object></div>",
-          "recurso": "<h4>Est&aacute;ndar IEEE 802.3</h4><div class='embed-responsive embed-responsive-16by9 diapos'> <object data='assets/data/3_3_EstandarIEEE802.pdf' type='application/pdf' ></object> </div><br /><br />"
+          "recurso": "<h4>IEEE 802.3 standard</h4><div class='embed-responsive embed-responsive-16by9 diapos'> <object data='assets/data/3_3_EstandarIEEE802.pdf' type='application/pdf' ></object> </div><br /><br />"
         },
         {
           "seccion": 3.4,
-          "titulo": "Tecnologías de control de acceso al medio",
+          "titulo": "Media access control technologies",
           "descripcionRecurso": "",
           "keywords": [
-            "Accesos, Medios compartidos, CSMA"
+            "Access", 
+            "Shared Media", 
+            "CSMA"
           ],
-          "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio.pdf' type='application/pdf'></object></div><br/><br/><h4>Protocolos de acceso al medio</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ProtocolosAccesoAlMedio.pdf' type='application/pdf'></object></div>",
+          "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio.pdf' type='application/pdf'></object></div><br/><br/><h4>Media access protocols</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ProtocolosAccesoAlMedio.pdf' type='application/pdf'></object></div>",
           "recurso": ""
         }
       ],
       "presentaciones": [
         {
           "seccion": 3.1,
-          "titulo": "Fundamentos de la capa física",
+          "titulo": "Fundamentals of the Physical Layer",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_1_FundamentosDeCapaFisica.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Ejemplos resueltos del tema",
+          "titulo": "Solved examples of the topic",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_1_EjemplosResueltosTema.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": 3.2,
-          "titulo": "Acceso al controlador de la tarjeta de red en C",
+          "titulo": "Accessing the network card driver in C",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/NIC_Npcap.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Acceso al controlador de la tarjeta de red en C",
+          "titulo": "Accessing the network card driver in C",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='http://148.204.58.221/axel/redesnp/sniffer/NPCAP/' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Acceso al controlador de la tarjeta de red en JAVA",
+          "titulo": "Accessing the network card driver in JAVA",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/NIC_Pcap4J.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Acceso al controlador de la tarjeta de red en JAVA",
+          "titulo": "Accessing the network card driver in JAVA",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='http://148.204.58.221/axel/redesnp/sniffer/pcap4j/' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },  
         {
           "seccion": "",
-          "titulo": "Protocolo de Resolución de Direcciones (ARP)",
+          "titulo": "Address Resolution Protocol (ARP)",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/ARP.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Protocolos de capa de Red y Transporte",
+          "titulo": "Network and Transport Layer Protocols",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/IP_ICMP_IGMP.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": 3.3,
-          "titulo": "Estándar IEEE 802.3",
+          "titulo": "IEEE 802.3 standard",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_3_EstandarIEEE802.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         },
         {
           "seccion": 3.4,
-          "titulo": "Tecnologías de control de acceso al medio",
+          "titulo": "Media access control technologies",
           "descripcionRecurso": "",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='assets/data/3_3_EstandarIEEE802.pdf' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
@@ -323,84 +325,84 @@
       "recurso": [
         {
           "seccion": "",
-          "titulo": "Tutorial de instalacion de NPCAP en C",
+          "titulo": "NPCAP installation tutorial in C",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/SeqaCDfdzpo' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Tutorial de como listar Interfaces de red con NPCAP en C",
+          "titulo": "Tutorial on how to list network interfaces with NPCAP in C",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/iEnKeBHVHqg' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Tutorial de como visualizar una trama utilizando NPCAP en C",
+          "titulo": "Tutorial on how to display a plot using NPCAP in C",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/cFgc22wn1e0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Tutorial de como analizar una trama utilizando NPCAP en C",
+          "titulo": "Tutorial on how to analyze a frame using NPCAP in C",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/CprEysiSZJE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Tutorial de como enviar tramas ethernet utilizando NPCAP en C",
+          "titulo": "Tutorial on how to send ethernet frames using NPCAP in C",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/o1XP_NobvtE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Tutorial de como enviar archivos .PCAP por ethernet utilizando NPCAP en C",
+          "titulo": "Tutorial on how to send .PCAP files over ethernet using NPCAP in C",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/UtCxeBRJsZw' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Tutorial para Filtrar Tramas con NPCAP en C",
+          "titulo": "Tutorial for Filtering Frames with NPCAP in C",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/LJJpbCcEpm0' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Configuración de PCAPJ4 en Java",
+          "titulo": "Configuring PCAPJ4 in Java",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/LWMB3PpejME' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Visualización de tramas con PCAP4J",
+          "titulo": "Viewing frames with PCAP4J",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/mmOaHJsUKKs' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Análisis de la trama con PCAP4J",
+          "titulo": "Plot analysis with PCAP4J",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/H8-HPkwSycc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Capturar Tramas en un archivo PCAP con PCAP4J",
+          "titulo": "Capturing Frames in a PCAP File with PCAP4J",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/NovAYG12FEE' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
         },
         {
           "seccion": "",
-          "titulo": "Crear Tramas y Enviarlas Usando PCAP4J",
+          "titulo": "Creating Frames and Sending Them Using PCAP4J",
           "descripcionRecurso": "",
           "category": "video",
           "recurso": "<iframe class='embed-responsive-item' src='https://www.youtube.com/embed/h53mYo7WesM' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen=''></iframe>"
@@ -425,12 +427,12 @@
       "indice": 4,
       "titulo": "Internet layer",
       "imagen": "https://ruizhealytimes.com/wp-content/uploads/2020/12/Internet-velocidad-Foto-Archivo.jpg",
-      "competencia": "Administra problemas entre redes IP con base en el direccionamiento IPv4 y los protocolos ARP, IP, ICMP, IGMP y de enrutamiento.  ",
+      "competencia": "Manages problems between IP networks based on IPv4 addressing and ARP, IP, ICMP, IGMP, and routing protocols.",
       "keywords": [
-        "Internet IP",
-        "Enrutamiento IP",
-        "ARP",
-        "ICMP",
+        "Internet IP", 
+        "IP Routing", 
+        "ARP", 
+        "ICMP", 
         "IGMP"
       ],
       "evaluacion": "<h3 class='text-center mt-4'>Section without information</h3>",
@@ -447,53 +449,53 @@
       "contenido": [
         {
           "seccion": 4.1,
-          "titulo": "Protocolo de Internet IP",
+          "titulo": "Internet Protocol IP",
           "descripcionRecurso": "",
           "keywords": [
             "IPv4",
             "IPv6",
-            "Encabezados",
-            "Tramas"
+            "Headers",
+            "Frames"
           ],
           "unidad": "",
           "recurso": ""
         },
         {
           "seccion": 4.2,
-          "titulo": "Enrutamiento IP",
+          "titulo": "IP Routing",
           "descripcionRecurso": "",
           "keywords": [
-            "Enrutamiento Estático",
-            "Enrutamiento Dinámico"
+            "Static Routing",
+            "Dynamic Routing"
           ],
           "unidad": "",
           "recurso": ""
         },
         {
           "seccion": 4.3,
-          "titulo": "Protocolo de Resolución de Direcciones ARP",
+          "titulo": "Address Resolution Protocol (ARP)",
           "descripcionRecurso": "",
           "keywords": [
             "ARP",
-            "Tramas"
+            "Plots"
           ],
           "unidad": "",
           "recurso": ""
         },
         {
           "seccion": 4.4,
-          "titulo": "Protocolo de Mensajes de Control de Internet ICMP ",
+          "titulo": "Internet Control Message Protocol ICMP",
           "descripcionRecurso": "",
           "keywords": [
             "ICMP",
-            "Tramas"
+            "Plots"
           ],
           "unidad": "",
           "recurso": ""
         },
         {
           "seccion": 4.5,
-          "titulo": "Protocolo de Administración de Grupos de Internet (IGMP)",
+          "titulo": "Internet Group Management Protocol (IGMP)",
           "descripcionRecurso": "",
           "keywords": [
             "IGMP",
@@ -516,7 +518,7 @@
         {
           "seccion": 4.2,
           "titulo": "Section without information",
-          "descripcionRecurso": "Presentación de genial.ly sobre la Gestión Estratégica de las empresas.",
+          "descripcionRecurso": "Section without information",
           "category": "reading",
           "recurso": "<iframe class='embed-responsive-item' frameborder='0' src='' type='text/html' allowscriptaccess='always' allowfullscreen='true' scrolling='yes' allownetworking='all'></iframe>"
         }
@@ -526,7 +528,7 @@
       "indice": 5,
       "titulo": "Transport layer",
       "imagen": "https://jaidoman.files.wordpress.com/2015/02/iot.png",
-      "competencia": "Analiza los servicios de la capa de Transporte a partir de los protocolos TCP Y UDP para una comunicación confiable extremo a extremo.",
+      "competencia": "Analyzes Transport layer services based on TCP and UDP protocols for reliable end-to-end communication.",
       "keywords": [
         "TCP",
         "UDP"
@@ -545,31 +547,31 @@
       "contenido": [
         {
           "seccion": 5.1,
-          "titulo": "Protocolo de Control de Transmisión TCP",
+          "titulo": "Transmission Control Protocol (TCP)",
           "descripcionRecurso": "",
           "keywords": [
-            "Encabezados TCP"
+            "TCP headers"
           ],
           "unidad": "<h3 class='text-center'>Section without information</h3>",
           "recurso": ""
         },
         {
           "seccion": 5.2,
-          "titulo": "Protocolo de Datagramas de Usuario UDP ",
+          "titulo": "User Datagram Protocol (UDP)",
           "descripcionRecurso": "",
           "keywords": [
-            "Encabezados UDP"
+            "UDP headers"
           ],
           "unidad": "<h3 class='text-center'>Section without information</h3>",
           "recurso": ""
         },
         {
           "seccion": 5.3,
-          "titulo": "Análisis de segmentos TCP y datagramas UDP",
+          "titulo": "Analysis of TCP segments and UDP datagrams",
           "descripcionRecurso": "",
           "keywords": [
-            "Segmentos",
-            "Datagramas"
+            "Segments", 
+            "Datagrams"
           ],
           "unidad": "<h3 class='text-center'>Section without information</h3>",
           "recurso": ""
@@ -578,7 +580,7 @@
       "recurso": [
         {
           "seccion": 5.1,
-          "titulo": "Aún no existe información para esta unidad",
+          "titulo": "There is no information for this unit yet.",
           "descripcionRecurso": "",
           "keywords": [],
           "unidad": "<h3 class='text-center'>Section without information</h3>",

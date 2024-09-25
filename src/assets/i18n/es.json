@@ -138,17 +138,41 @@
       "5": "Capa de transporte"
     },
     "units-info": {
-      "indice": 1,
-      "titulo": "Fundamentos de redes",
-      "imagen": "https://i.go-travels.com/img/how-to/networking-fundamentals.jpg",
-      "competencia": "Analiza los fundamentos de redes de computadoras con base en su clasificación, organizaciones de estandarización, el modelo OSI, la arquitectura TCP/IP.",
-      "keywords": [
-        "Redes",
-        "Clasificación",
-        "Estandares",
-        "OSI",
-        "TCP/IP"
-      ]
-    }
+      "prefix": "Unidad",
+      "pre-titulo": "Unidad de competencia",
+      "content-table": {
+        "item-1": "Contenido",
+        "item-2": "Evaluación por unidad",
+        "item-3": "Actividades de aprendizaje",
+        "item-4": "Autoevaluación",
+        "item-5": "Coevaluación",
+        "item-6": "Presentación",
+        "item-7": "Material adicional"
+      },
+      "text-1": "De click en el título de cada sección para visualizar el contenido.",
+      "text-2": "De click en el título de la actividad para visualizar el contenido.",
+      "text-3": "De click en el título de la presentación para visualizar su contenido.",
+      "text-4": "Aquí encontrarás videos auxiliares a la unidad"
+    },
+    "sources": {
+      "title": "Bibliografía",
+      "image": "assets/img/bibliografia.png"
+    },
+    "glossary": {
+      "title": "Glosario Redes de Computadoras",
+      "word": "Palabra",
+      "concept": "Concepto"
+    },
+    "datatable": {
+      "search": "Buscar",
+      "paginate": {
+        "first": "Primero",
+        "last": "Último",
+        "previous": "Anterior",
+        "next": "Siguiente"
+      },
+      "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+      "lengthMenu": "Mostrar _MENU_ entradas"
+    } 
   }
   

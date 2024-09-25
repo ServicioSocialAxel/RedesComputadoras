@@ -136,6 +136,43 @@
       "3": "Network access layer",
       "4": "Internet layer",
       "5": "Transport layer"
+    },
+    "units-info": {
+      "prefix": "Unit",
+      "pre-titulo": "Unit of competence",
+      "content-table": {
+        "item-1": "Content",
+        "item-2": "Unit-based assessment",
+        "item-3": "Learning activities",
+        "item-4": "Self-assessment",
+        "item-5": "Co-assessment",
+        "item-6": "Presentation",
+        "item-7": "Additional material"
+      },
+      "text-1": "Click on the title of each section to view the content.",
+      "text-2": "Click on the title of the activity to view the content.",
+      "text-3": "Click on the title of the presentation to view its content.",
+      "text-4": "Here you will find auxiliary videos to the unit"
+    },
+    "sources": {
+      "title": "Sources",
+      "image": "assets/img/sources.png"
+    },
+    "glossary": {
+      "title": "Computer Networks Glossary",
+      "word": "Word",
+      "concept": "Concept"
+    },
+    "datatable": {
+      "search": "Search",
+      "paginate": {
+        "first": "First",
+        "last": "Last",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "info": "Showing _START_ to _END_ of _TOTAL_ records",
+      "lengthMenu": "Show _MENU_ entries"
     }
   }
   
