@@ -1,41 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { InfoService } from '../../services/info.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { Subject } from 'rxjs';
+
+declare var $: any; // Declarar jQuery para utilizar DataTables
 
 @Component({
   selector: 'app-glosario',
   templateUrl: './glosario.component.html',
   styleUrls: ['./glosario.component.css']
 })
-export class GlosarioComponent implements OnInit {
+export class GlosarioComponent implements OnInit, OnDestroy {
   dtOptions: DataTables.Settings = {};
-  optionsReady = false;  // Variable de control
-  currentLang: string = 'es';  // Idioma actual, por defecto 'es' (español)
+  optionsReady = false;
+  currentLang: string = 'es';
+  langChangeSubscription: any;
 
   constructor(
     private infoService: InfoService,
-    private translate: TranslateService // Inyectar TranslateService
+    private translate: TranslateService
   ) {}
 
   ngOnInit(): void {
-    // Establecer el idioma predeterminado a español si no está definido
     this.translate.setDefaultLang('es');
     this.currentLang = this.translate.currentLang || this.translate.defaultLang;
-    console.log('Idioma inicial (ngOnInit):', this.currentLang);
-    
-    // Cargar las opciones de la tabla con datos en español por defecto
+
     this.setTableOptions();
 
     // Suscribirse a los cambios de idioma
-    this.translate.onLangChange.subscribe(() => {
-      this.currentLang = this.translate.currentLang || this.translate.defaultLang;
-      console.log('Idioma después del cambio (ngOnInit - onLangChange):', this.currentLang);
-      // Actualizar las opciones de DataTables cuando cambie el idioma
+    this.langChangeSubscription = this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLang = event.lang;
       this.setTableOptions();
     });
   }
 
-  // Método para configurar DataTables con traducciones dinámicas
   setTableOptions(): void {
     this.translate.get([
       'datatable.search', 
@@ -44,16 +42,17 @@ export class GlosarioComponent implements OnInit {
       'datatable.info', 
       'datatable.lengthMenu'
     ]).subscribe(translations => {
-      console.log('Traducciones obtenidas:', translations);  // Verifica las traducciones
-
-      // Verificar el idioma actual y cargar datos según el idioma
+      
       let data;
       if (this.currentLang === 'es') {
-        data = this.infoService.getGlosario();  // Cargar los datos en español
-        console.log('DATA: ', data);
+        data = this.infoService.getGlosario();
       } else {
-        data = this.infoService.getGlossary();  // Cargar los datos en inglés u otro idioma
-        console.log('DATA: ', data);
+        data = this.infoService.getGlossary();
+      }
+
+      // Destruir la tabla si ya está inicializada
+      if ($.fn.DataTable && $.fn.dataTable.isDataTable('#glosarioTable')) {
+        $('#glosarioTable').DataTable().clear().destroy();
       }
 
       // Configurar las opciones de DataTables
@@ -80,8 +79,21 @@ export class GlosarioComponent implements OnInit {
         ]
       };
 
-      // Establecer que las opciones están listas para inicializar la tabla
+      // Reinicializar la tabla
+      $('#glosarioTable').DataTable(this.dtOptions);
       this.optionsReady = true;
     });
+  }
+
+  ngOnDestroy(): void {
+    // Desuscribirse del cambio de idioma para evitar problemas de memoria
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+
+    // Destruir la tabla DataTable si existe al destruir el componente
+    if ($.fn.DataTable && $.fn.dataTable.isDataTable('#glosarioTable')) {
+      $('#glosarioTable').DataTable().clear().destroy();
+    }
   }
 }
