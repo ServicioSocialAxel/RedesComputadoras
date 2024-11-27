@@ -1,7 +1,7 @@
 [
   {
     "word": "MAC",
-    "description": "El MAC (Medium Access Control) proporciona a la capa de enlace de datos el direccionamiento y la delimitación de datos de acuerdo con los requisitos de señalización física del medio y al tipo de protocolo de capa de enlace de datos en uso."
+    "description": "Proporciona a la capa de enlace de datos el direccionamiento y la delimitación de datos de acuerdo con los requisitos de señalización física del medio y al tipo de protocolo de capa de enlace de datos en uso."
   },
   {
     "word": "LLC",
