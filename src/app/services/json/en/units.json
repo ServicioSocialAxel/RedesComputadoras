@@ -234,7 +234,7 @@
             "Headers",
             "Frame Analysis"
           ],
-          "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/HDLC_LLC.pdf' type='application/pdf'></object></div>",
+          "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/HDLC_LLC_en.pdf' type='application/pdf'></object></div>",
           "recurso": "<h4>IEEE 802.3 standard</h4><div class='embed-responsive embed-responsive-16by9 diapos'> <object data='assets/data/3_3_EstandarIEEE802.pdf' type='application/pdf' ></object> </div><br /><br />"
         },
         {
@@ -246,7 +246,7 @@
             "Shared Media", 
             "CSMA"
           ],
-          "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio.pdf' type='application/pdf'></object></div><br/><br/><h4>Media access protocols</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ProtocolosAccesoAlMedio.pdf' type='application/pdf'></object></div>",
+          "unidad": "<div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ControlAccesoMedio_en.pdf' type='application/pdf'></object></div><br/><br/><h4>Media access protocols</h4><div class='embed-responsive embed-responsive-16by9 diapos'><object data='assets/data/ProtocolosAccesoAlMedio_en.pdf' type='application/pdf'></object></div>",
           "recurso": ""
         }
       ],
