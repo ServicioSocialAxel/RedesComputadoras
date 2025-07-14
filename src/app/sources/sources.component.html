@@ -1,0 +1,22 @@
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Autor(es)</th>
+        <th>Año</th>
+        <th>Título del documento</th>
+        <th>Editorial</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ref of bibliografia">
+        <td>{{ ref.tipo }}</td>
+        <td>{{ ref.autor }}</td>
+        <td>{{ ref.anio }}</td>
+        <td>{{ ref.titulo }}</td>
+        <td>{{ ref.editorial }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

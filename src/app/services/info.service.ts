@@ -6,6 +6,8 @@ import glosario from './json/glosario.json';
 import glossary from './json/glossary.json'
 import { saveAs } from "file-saver"
 import { HttpClient } from '@angular/common/http';
+import bibliografia from './json/bibliografia.json';
+
 
 @Injectable({
   providedIn: 'root'
@@ -49,5 +51,10 @@ export class InfoService {
     //saveAs(blob, './json/test.json');
     this.http.post('./json/test.json', JSON.stringify(data));
   }
+
+  getBibliografia(){
+    return bibliografia;
+  }
+  
 
 }

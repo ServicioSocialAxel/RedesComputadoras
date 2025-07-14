@@ -152,11 +152,10 @@
       "text-1": "De click en el título de cada sección para visualizar el contenido.",
       "text-2": "De click en el título de la actividad para visualizar el contenido.",
       "text-3": "De click en el título de la presentación para visualizar su contenido.",
-      "text-4": "Aquí encontrarás videos auxiliares a la unidad"
+      "text-4": "Aquí encontrarás videos de apoyo para los subtemas relacionados a la Capa de Acceso a la Red "
     },
     "sources": {
-      "title": "Bibliografía",
-      "image": "assets/img/bibliografia.png"
+      "title": "Bibliografía"
     },
     "glossary": {
       "title": "Glosario Redes de Computadoras",

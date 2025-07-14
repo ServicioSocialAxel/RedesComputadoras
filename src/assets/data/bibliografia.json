@@ -1,0 +1,59 @@
+[
+    {
+      "tipo": "B",
+      "autor": "Peterson Larry L.",
+      "anio": "2021",
+      "titulo": "Computer Networks. A system approach (6th ed) ISBN: 978-0-12-385059-1",
+      "editorial": "Morgan Kaufmann"
+    },
+    {
+      "tipo": "B",
+      "autor": "Stallings W.",
+      "anio": "2004",
+      "titulo": "Comunicaciones y Redes de Computadores (7ma ed) ISBN-13: 978-8420541105",
+      "editorial": "Prentice Hall"
+    },
+    {
+      "tipo": "B",
+      "autor": "Sanders, C.",
+      "anio": "2007",
+      "titulo": "Practical Packet Analysis: using Wireshark to solve real world ISBN-13: 978-1-59327-149-7",
+      "editorial": "No Starch Press"
+    },
+    {
+      "tipo": "B",
+      "autor": "Kurose, R.",
+      "anio": "2013",
+      "titulo": "Computer Networking: A Top-Down Approach (6th ed) ISBN-13: 978-0-13-285620-1",
+      "editorial": "Pearson"
+    },
+    {
+      "tipo": "B",
+      "autor": "Goralski, W.",
+      "anio": "2017",
+      "titulo": "The Illustrated Network: How TCP/IP Works in a Modern Network (2nd Ed) ISBN-13: 978-0128110270",
+      "editorial": "Morgan Kaufmann Publishers"
+    },
+    {
+      "tipo": "C",
+      "autor": "Lee T., Davies J.",
+      "anio": "2000",
+      "titulo": "Microsoft Windows 2000 TCP/IP protocolos y servicios ISBN: 84-481-2834-6",
+      "editorial": "McGraw Hill"
+    },
+    {
+      "tipo": "C",
+      "autor": "Tanenbaum, A.",
+      "anio": "2012",
+      "titulo": "Redes de computadoras (5ta edición) ISBN: 9786073208178",
+      "editorial": "Pearson"
+    },
+    {
+      "tipo": "C",
+      "autor": "Howser, G.",
+      "anio": "2020",
+      "titulo": "Computer Networks and the Internet: A Hands-On Approach ISBN: 978-3-030-34495-5",
+      "editorial": "Springer"
+    }
+  ]
+  

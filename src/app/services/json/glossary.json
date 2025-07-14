@@ -1,11 +1,11 @@
 [
     {
       "word": "MAC",
-      "description": "The MAC (Medium Access Control) provides the data link layer with addressing and data delimitation according to the physical signaling requirements of the medium and the type of data link layer protocol in use."
+      "description": "MAC (Medium Access Control) provides the data link layer with addressing and data delimitation according to the physical signaling requirements of the medium and the type of data link layer protocol in use."
     },
     {
       "word": "LLC",
-      "description": "The LLC (Logical Link Control) places information in the frame that identifies which network layer protocol is being used by the frame."
+      "description": "LLC (Logical Link Control) places information in the frame that identifies which network layer protocol is being used by the frame."
     },
     {
       "word": "HDLC",
@@ -17,7 +17,7 @@
     },
     {
       "word": "Channel Capacity",
-      "description": "The maximum speed at which data can be transmitted over a communication channel with a certain fidelity. It is measured in bits per second (bps)."
+      "description": "Maximum speed at which data can be transmitted over a communication channel with a certain fidelity. It is measured in bits per second (bps)."
     },
     {
       "word": "Noise",

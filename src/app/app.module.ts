@@ -16,6 +16,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SourcesComponent } from './sources/sources.component';
 
 // Función para cargar traducciones
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,7 +32,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UnidadComponent,
     HtmlObjetPipe,
     EvaluacionesComponent,
-    GlosarioComponent
+    GlosarioComponent,
+    SourcesComponent
   ],
   imports: [
     BrowserModule,

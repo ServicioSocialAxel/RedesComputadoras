@@ -4,6 +4,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RecursosComponent } from './components/recursos/recursos.component';
 import { UnidadesComponent } from './components/unidades/unidades.component';
 import { EvaluacionesComponent } from './components/evaluaciones/evaluaciones.component';
+import { SourcesComponent } from './sources/sources.component';
+
 
 //Defining routes
 const routes: Routes = [
@@ -11,6 +13,7 @@ const routes: Routes = [
   {path: 'recursos/:id', component: RecursosComponent},
   {path: 'unidades/:id', component: UnidadesComponent},
   {path: 'evaluaciones/:id', component: EvaluacionesComponent},
+  {path: 'sources', component: SourcesComponent },
   {path: '**', component: HomeComponent}
 ];
 
